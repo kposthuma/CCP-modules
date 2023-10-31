@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 12:32:45 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/10/25 18:54:55 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/10/31 13:23:44 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,5 @@ class PhoneBook
 		PhoneBook();
 		~PhoneBook();
 };
-
-PhoneBook::PhoneBook()
-{
-	std::cout << "Creating a new Phonebook\n";
-
-}
-
-PhoneBook::~PhoneBook()
-{	
-	std::cout << "Deleting Phonebook\n";
-}
 
 #endif

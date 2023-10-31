@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 12:32:40 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/10/25 18:53:38 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/10/31 13:27:43 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,37 @@
 #include<iomanip>
 #include<string>
 
-void PhoneBook::setcontact(Contact contact, int i)
-{
-	contacts[i] = contact;
-}
+void Contact::set_first_name(std::string a) {
+	first_name = a; }
+std::string Contact::get_first_name() {
+	return (first_name); }
+void Contact::set_last_name(std::string a) {
+	last_name = a; }
+std::string Contact::get_last_name() {
+	return (last_name); }
+void Contact::set_nickname(std::string a) {
+	nickname = a; }
+std::string Contact::get_nickname() {
+	return (nickname); }
+void Contact::set_phone_number(std::string a) {
+	phone_number = a; }
+std::string Contact::get_phone_number() {
+	return (phone_number); }
+void Contact::set_secret(std::string a) {
+	secret = a; }
+std::string Contact::get_secret() {
+	return (secret); }
+Contact::Contact() {}
+Contact::~Contact() {}
 
-Contact PhoneBook::getcontact(int i)
-{
-	return contacts[i];
-}
+void PhoneBook::setcontact(Contact contact, int i){
+	contacts[i] = contact; }
+Contact PhoneBook::getcontact(int i){
+	return contacts[i]; }
+PhoneBook::PhoneBook(){
+	std::cout << "Creating a new Phonebook\n"; }
+PhoneBook::~PhoneBook(){	
+	std::cout << "Deleting Phonebook\n"; }
 
 void display_book(PhoneBook phonebook)
 {
