@@ -6,12 +6,12 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2023/11/01 18:59:27 by koen          ########   odam.nl          #
+#    Updated: 2023/11/01 18:55:29 by koen          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 CC := c++ -std=c++98 -pedantic -Wall -Werror -Wextra
-NAME := harl
+NAME := harlFilter
 SRCS := main.cpp \
 		Harl.cpp
 HEADERS	:= -I ./include
