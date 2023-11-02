@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/26 16:43:24 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/10/31 17:51:39 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/02 11:26:36 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class HumanB
 	private:
 		std::string _name;
 		Weapon *_weapon;
+		bool	armed;
 	public:
 		HumanB(std::string name);
 		~HumanB();

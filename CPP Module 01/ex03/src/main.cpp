@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 12:32:40 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/10/31 17:16:54 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/02 11:27:34 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main(void)
 		HumanB jim("Jim");
 		jim.setWeapon(club);
 		jim.attack();
+		// jim.setWeapon(club);
 		club.setType("some other type of club");
 		jim.attack();
 	}
