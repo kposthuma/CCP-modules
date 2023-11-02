@@ -6,43 +6,29 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/26 13:23:03 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/10/26 18:45:50 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/10/31 17:53:21 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<HumanA.hpp>
 
-HumanA::HumanA(std::string name, Weapon weapon)
-{
+HumanA::HumanA(std::string name, Weapon &weapon){
 	setWeapon(weapon);
-	setName(name);
-	// std::cout << "Creating a new Human A" << std::endl;
-}
+	setName(name); }
 
-HumanA::~HumanA()
-{
-	// std::cout << "HumanA " << name << " has been killed!" << std::endl;
-}
+HumanA::~HumanA() {}
 
-void HumanA::setName(std::string string)
-{
-	name = string;
-}
+void HumanA::setName(std::string name){
+	_name = name; }
 
-std::string HumanA::getName()
-{
-	return name;
-}
+std::string HumanA::getName(){
+	return _name; }
 
-void HumanA::setWeapon(Weapon club)
-{
-	weapon = club;
-}
+void HumanA::setWeapon(Weapon &weapon){
+	_weapon = &weapon; }
 
-Weapon HumanA::getWeapon()
-{
-	return weapon;
-}
+Weapon HumanA::getWeapon(){
+	return *_weapon; }
 
 void HumanA::attack()
 {

@@ -6,42 +6,28 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/26 13:23:03 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/10/26 18:51:54 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/10/31 17:51:33 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<HumanB.hpp>
 
-HumanB::HumanB(std::string name)
-{
-	setName(name);
-	// std::cout << "Creating a new Human B" << std::endl;
-}
+HumanB::HumanB(std::string name){
+	setName(name); }
 
-HumanB::~HumanB()
-{
-	// std::cout << "HumanB " << name << " has been killed!" << std::endl;
-}
+HumanB::~HumanB(){ }
 
-void HumanB::setName(std::string string)
-{
-	name = string;
-}
+void HumanB::setName(std::string name){
+	_name = name; }
 
-std::string HumanB::getName()
-{
-	return name;
-}
+std::string HumanB::getName(){
+	return _name; }
 
-void HumanB::setWeapon(Weapon club)
-{
-	weapon = club;
-}
+void HumanB::setWeapon(Weapon &weapon){
+	_weapon = &weapon; }
 
-Weapon HumanB::getWeapon()
-{
-	return weapon;
-}
+Weapon HumanB::getWeapon(){
+	return *_weapon; }
 
 void HumanB::attack()
 {
