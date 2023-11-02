@@ -21,7 +21,7 @@
 class Fixed
 {
 	private:
-		int fix;
+		int rawBits;
 		static const int eight = 8;
 	public:
 		Fixed();
