@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 12:32:40 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/02 16:06:55 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/04 11:31:41 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,21 @@ int main( void )
 	Fixed const d( b );
 
 	a = Fixed( 1234.4321f );
+	Fixed const e = a;
+	Fixed const f = ( 420.69f );
 
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
+	std::cout << "e is " << e << std::endl;
+	std::cout << "f is " << f << std::endl;
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	std::cout << "e is " << e.toInt() << " as integer" << std::endl;
+	std::cout << "f is " << f.toInt() << " as integer" << std::endl;
 
 	return 0;
 }

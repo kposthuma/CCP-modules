@@ -13,33 +13,29 @@
 #include<Fixed.hpp>
 
 Fixed::Fixed(){
-	// std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 	setRawBits(0);
 }
 
 Fixed::Fixed(const Fixed &fix){
-	// std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	operator=(fix);
 }
 
 Fixed::Fixed(const int i){
-	// std::cout << "Int constructor called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 	int j = i * (1 << 8);
-	std::cout << "value of j " << j << std::endl;
-	std::cout << "value of input " << i << std::endl;
 	setRawBits(j);
 }
 
 Fixed::Fixed(const float f){
-	// std::cout << "Float constructor called" << std::endl;
+	std::cout << "Float constructor called" << std::endl;
 	float i = f * (1 << eight);
-	std::cout << "value of i " << i << std::endl;
-	std::cout << "value of input " << f << std::endl;
 	setRawBits(roundf(i));
 }
 
 void Fixed::operator=(const Fixed& op){
-	// std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	rawBits = op.getRawBits();
 }
 
@@ -48,13 +44,15 @@ Fixed::~Fixed(){
 }
 
 float Fixed::toFloat( void ) const{
-	float f = rawBits / (1 << eight);
+	float f = getRawBits();
+	f = f / (1 << eight);
 	return f;
 }
 
 int Fixed::toInt( void ) const{
-	int i = rawBits / (1 << eight);
-	return i;
+	float i = getRawBits();
+	i = i / (1 << eight);
+	return roundf(i);
 }
 
 void Fixed::setRawBits(int const raw){
