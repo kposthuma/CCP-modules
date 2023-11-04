@@ -113,7 +113,7 @@ float Fixed::operator/(const Fixed& op) const {
 
 Fixed &Fixed::operator++(){
 	float f = toFloat();
-	++f;
+	f = f + 0.00390625;
 	float i = f * (1 << eight);
 	setRawBits(roundf(i));
 	return *this;
@@ -121,26 +121,26 @@ Fixed &Fixed::operator++(){
 
 Fixed &Fixed::operator--(){
 	float f = toFloat();
-	--f;
+	f = f - 0.00390625;
 	float i = f * (1 << eight);
 	setRawBits(roundf(i));
 	return *this;
 }
 
-float Fixed::operator++(int){
+Fixed Fixed::operator++(int){
 	float f = toFloat();
-	f++;
+	f += 0.00390625;
 	float i = f * (1 << eight);
 	setRawBits(roundf(i));
-	return (f++);		
+	return *this;		
 }
 
-float Fixed::operator--(int){
+Fixed Fixed::operator--(int){
 	float f = toFloat();
-	f--;
+	f -= 0.00390625;
 	float i = f * (1 << eight);
 	setRawBits(roundf(i));
-	return (f++);	
+	return *this;	
 }
 
 Fixed::~Fixed(){

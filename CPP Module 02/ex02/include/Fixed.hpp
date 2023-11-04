@@ -41,8 +41,8 @@ class Fixed
 		float operator/(const Fixed& op) const;
 		Fixed &operator++();
 		Fixed &operator--();
-		float operator++(int);
-		float operator--(int);
+		Fixed operator++(int);
+		Fixed operator--(int);
 		~Fixed();
 		float toFloat( void ) const;
 		int toInt( void ) const;
