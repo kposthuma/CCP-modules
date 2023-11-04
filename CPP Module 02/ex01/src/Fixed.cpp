@@ -52,7 +52,7 @@ float Fixed::toFloat( void ) const{
 int Fixed::toInt( void ) const{
 	float i = getRawBits();
 	i = i / (1 << eight);
-	return roundf(i);
+	return (roundf(i));
 }
 
 void Fixed::setRawBits(int const raw){
