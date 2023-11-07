@@ -24,11 +24,11 @@ class Fixed
 		int rawBits;
 		static const int eight = 8;
 	public:
-		Fixed();
-		Fixed(const Fixed &fix);
+		Fixed(); //default constructor
+		Fixed(const Fixed &fix); // copy constructor
 		Fixed(const int i);
 		Fixed(const float f);
-		void operator=(const Fixed& op);
+		void operator=(const Fixed& op); // copy assignment operator overload
 		bool operator>(const Fixed& op) const;
 		bool operator<(const Fixed& op) const;
 		bool operator>=(const Fixed& op) const;
@@ -43,7 +43,7 @@ class Fixed
 		Fixed &operator--();
 		Fixed operator++(int);
 		Fixed operator--(int);
-		~Fixed();
+		~Fixed(); // destructor
 		float toFloat( void ) const;
 		int toInt( void ) const;
 		static Fixed &min(Fixed &a, Fixed &b);
