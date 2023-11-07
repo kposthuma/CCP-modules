@@ -6,30 +6,41 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 12:32:40 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/04 20:13:20 by koen          ########   odam.nl         */
+/*   Updated: 2023/11/07 17:09:44 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<Fixed.hpp>
 #include<Point.hpp>
 
-int main( void )
+int main(void)
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Point a;
+	Point b(0, 11);
+	Point c(11, 0);
+	Point d(1, 1);
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max( a, b ) << std::endl;
-
+	bsp(a, b ,c ,d);
 	return 0;
 }
+
+// int main( void )
+// {
+// 		Fixed a;
+// 		Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+
+// 		std::cout << a << std::endl;
+// 		std::cout << ++a << std::endl;
+// 		std::cout << a << std::endl;
+// 		std::cout << a++ << std::endl;
+// 		std::cout << a << std::endl;
+
+// 		std::cout << b << std::endl;
+
+// 		std::cout << Fixed::max( a, b ) << std::endl;
+
+// 	return 0;
+// }
 // int main( void )
 // {
 // 	Fixed a;

@@ -6,12 +6,12 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2023/11/04 20:13:48 by koen          ########   odam.nl          #
+#    Updated: 2023/11/07 14:39:49 by kposthum      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 CC := c++ -std=c++98 -pedantic -Wall -Werror -Wextra
-NAME := fixed
+NAME := bsp
 SRCS := main.cpp \
 		Fixed.cpp \
 		Point.cpp \
