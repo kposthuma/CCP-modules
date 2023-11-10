@@ -37,6 +37,9 @@ class ClapTrap
 		int getHP() const;
 		int getEP() const;
 		int getAD() const;
+		void setHP(const unsigned int _hp);
+		void setEP(const unsigned int _ep);
+		void setAD(const unsigned int _ad);
 };
 
 #endif

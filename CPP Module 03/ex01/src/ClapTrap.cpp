@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/07 17:27:56 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/08 16:02:21 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/08 16:12:15 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,16 @@ int ClapTrap::getEP() const{
 
 int ClapTrap::getAD() const{
 	return ad;
+}
+
+void ClapTrap::setHP(const unsigned int _hp){
+	hp = _hp;
+}
+
+void ClapTrap::setEP(const unsigned int _ep){
+	ep = _ep;
+}
+
+void ClapTrap::setAD(const unsigned int _ad){
+	ad = _ad;
 }
