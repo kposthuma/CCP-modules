@@ -24,6 +24,7 @@ class ClapTrap
 		unsigned int hp;
 		unsigned int ep;
 		unsigned int ad;
+		unsigned int hp_max;
 	public:
 		ClapTrap();
 		ClapTrap(std::string _name);
@@ -37,9 +38,11 @@ class ClapTrap
 		int getHP() const;
 		int getEP() const;
 		int getAD() const;
+		void setName(const std::string _name);
 		void setHP(const unsigned int _hp);
 		void setEP(const unsigned int _ep);
 		void setAD(const unsigned int _ad);
+		void setHPMax(const unsigned int _hp);
 };
 
 #endif

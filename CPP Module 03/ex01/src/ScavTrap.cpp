@@ -6,19 +6,25 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/08 16:14:15 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/08 17:06:10 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/11 19:30:31 by koen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<ScavTrap.cpp>
+#include<ScavTrap.hpp>
 
 ScavTrap::ScavTrap(std::string _name){
-	name = _name;
+	setName(_name);
 	setHP(100);
 	setEP(50);
 	setAD(20);
+	setHPMax(100);
+	std::cout << "This is a SvavTrap" << std::endl;
+}
+
+ScavTrap::~ScavTrap(){
+	std::cout << "This was a ScavTrap" << std::endl;
 }
 
 void ScavTrap::guardGate(){
-	std::cout << "ScavTrap " << name << " is now in gatekeeper mode"<< std::endl;
+	std::cout << "ScavTrap " << getName() << " is now in gatekeeper mode"<< std::endl;
 }
