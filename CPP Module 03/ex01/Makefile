@@ -6,14 +6,15 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2023/11/07 17:27:30 by kposthum      ########   odam.nl          #
+#    Updated: 2023/11/11 18:42:13 by koen          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 CC := c++ -std=c++98 -pedantic -Wall -Werror -Wextra
-NAME := claptrap
+NAME := scavtrap
 SRCS := main.cpp \
-		ClapTrap.cpp
+		ClapTrap.cpp \
+		ScavTrap.cpp
 HEADERS	:= -I ./include
 SRCDIR := ./src
 OBJDIR := ./obj
