@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/08 16:14:18 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/14 13:29:47 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/15 14:22:13 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ class ScavTrap : public ClapTrap {
 	private:
 
 	public:
-		ScavTrap(std::string _name);
+		ScavTrap();
+		ScavTrap(const std::string _name);
+		ScavTrap(const ScavTrap &cpy);
 		~ScavTrap();
+		void operator=(const ScavTrap& op);
 		void guardGate();	
 };
 

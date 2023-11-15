@@ -23,14 +23,10 @@ class ClapTrap
 		std::string name;
 		unsigned int hp;
 		unsigned int ep;
-		const unsigned int ad;
-		const unsigned int hp_max;
+		unsigned int ad;
+		unsigned int hp_max;
 	public:
-		// ClapTrap();
 		ClapTrap(std::string _name);
-		ClapTrap(std::string _name, unsigned int _hp, unsigned int _ep, unsigned int _ad);
-		// ClapTrap(const ClapTrap &fix);
-		// void operator=(const ClapTrap& op);
 		~ClapTrap();
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
@@ -40,7 +36,9 @@ class ClapTrap
 		int getEP() const;
 		int getAD() const;
 		void setHP(const unsigned int _hp);
+		void setHPmax(const unsigned int _hp);
 		void setEP(const unsigned int _ep);
+		void setAD(const unsigned int _ad);
 };
 
 #endif

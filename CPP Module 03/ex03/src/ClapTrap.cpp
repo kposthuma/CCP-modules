@@ -6,37 +6,15 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/07 17:27:56 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/14 15:54:00 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/15 13:43:38 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<ClapTrap.hpp>
 
-// ClapTrap::ClapTrap(): hp(10), ep(10), ad(0){
-// 	hp_max = hp;
-// 	std::cout << "A ClapTrap has appeared." << std::endl;
-// }
-
 ClapTrap::ClapTrap(std::string _name): name(_name), hp(10), ep(10), ad(0), hp_max(10){
 	std::cout << "A ClapTrap called " << name << " appeared." << std::endl;
 }
-
-ClapTrap::ClapTrap(std::string _name, unsigned int _hp, unsigned int _ep, unsigned int _ad):
-name(_name), hp(_hp), ep(_ep), ad(_ad), hp_max(_hp){
-	std::cout << "A ClapTrap called " << name << " appeared." << std::endl;
-}
-
-// ClapTrap::ClapTrap(const ClapTrap &fix){
-// 	operator=(fix);
-// }
-
-// void ClapTrap::operator=(const ClapTrap& op){
-// 	std::cout << "A copy of ClapTrap " << op.getName() << " has appeared" << std::endl;
-// 	name = op.getName();
-// 	hp = op.getHP();
-// 	ep = op.getEP();
-// 	ad = op.getAD();
-// }
 
 ClapTrap::~ClapTrap(){
 	std::cout << "ClapTrap died!" << std::endl;
@@ -107,6 +85,14 @@ void ClapTrap::setHP(const unsigned int _hp){
 	hp = _hp;
 }
 
+void ClapTrap::setHPmax(const unsigned int _hp){
+	hp_max = _hp;
+}
+
 void ClapTrap::setEP(const unsigned int _ep){
 	ep = _ep;
+}
+
+void ClapTrap::setAD(const unsigned int _ad){
+	ad = _ad;
 }
