@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:43 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 16:17:17 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/16 16:26:14 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ int main(){
 		Animal parrot("bird");
 		Animal seagull(parrot);
 		fish.makeSound();
+		parrot.makeSound();
 	}
-
+	{
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -37,7 +38,8 @@ int main(){
 	delete meta;
 	delete j;
 	delete i;
-
+	}
+	{
 	const WrongAnimal* k = new WrongCat();
 	const WrongAnimal* l = new WrongAnimal("Evaluator");
 	std::cout << k->getType() << " " << std::endl;
@@ -47,5 +49,6 @@ int main(){
 
 	delete k;
 	delete l;
+	}
 	return 0;
 }
