@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:38:47 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 15:10:40 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/16 16:11:45 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class WrongCat : public WrongAnimal{
 
 	public:
 		WrongCat();
-		WrongCat(std::string _type);
 		WrongCat(const WrongCat &src);
 		~WrongCat();
 		void operator=(const WrongCat &src);
+		void makeSound() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:38:45 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 14:33:28 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/16 15:33:23 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ class Dog : public Animal{
 
 	public:
 		Dog();
-		Dog(std::string _type);
 		Dog(const Dog &src);
 		~Dog();
 		void operator=(const Dog &src);
+
+		void makeSound() const;
 };
 
 #endif

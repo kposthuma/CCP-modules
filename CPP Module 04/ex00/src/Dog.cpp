@@ -6,13 +6,13 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:38:28 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 14:41:53 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/16 16:08:12 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<Dog.hpp>
 
-Dog::Dog(): Animal("Dog"){
+Dog::Dog() : Animal("Dog"){
 	std::cout << "Default constuctor Dog called.\nAnimal type has been set to \"Dog\"" << std::endl;
 }
 
@@ -28,4 +28,8 @@ Dog::~Dog(){
 void Dog::operator=(const Dog& src){
 	std::cout << "Copy assignment operator Dog called" << std::endl;
 	type = src.getType();
+}
+
+void Dog::makeSound() const{
+	std::cout << "Woof." << std::endl;
 }

@@ -29,3 +29,7 @@ void WrongCat::operator=(const WrongCat& src){
 	std::cout << "Copy assignment operator WrongCat called" << std::endl;
 	type = src.getType();
 }
+
+void WrongCat::makeSound() const{
+	std::cout << "Woof." << std::endl;
+}

@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:38:32 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 14:41:55 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/16 16:13:13 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,8 @@ Cat::~Cat(){
 void Cat::operator=(const Cat& src){
 	std::cout << "Copy assignment operator Cat called" << std::endl;
 	type = src.getType();
+}
+
+void Cat::makeSound() const{
+	std::cout << "Meow." << std::endl;
 }

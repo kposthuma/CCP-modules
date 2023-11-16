@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:50 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 15:08:46 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/16 16:12:31 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ class WrongAnimal
 		WrongAnimal();
 		WrongAnimal(std::string _type);
 		WrongAnimal(const WrongAnimal &src);
-		~WrongAnimal();
+		virtual ~WrongAnimal();
 		void operator=(const WrongAnimal &src);
 		void setType(std::string _type);
 		std::string getType() const;
 
-		void makeSound() const;
+		virtual void makeSound() const;
 };
 
 #endif

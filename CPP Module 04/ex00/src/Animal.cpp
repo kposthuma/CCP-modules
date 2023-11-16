@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:40 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 15:21:16 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/16 16:12:58 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Animal::Animal(const Animal &src){
 }
 
 Animal::~Animal(){
-	std::cout << "Default destructor Animal called" << std::endl;
+	std::cout << "Destructor Animal called" << std::endl;
 }
 
 void Animal::operator=(const Animal& src){
@@ -43,10 +43,5 @@ std::string Animal::getType() const{
 }
 
 void Animal::makeSound() const{
-	if (type == "Cat")
-		std::cout << "Meow." << std::endl;
-	else if (type == "Dog")
-		std::cout << "Woof." << std::endl;
-	else
-		std::cout << "[insert animal noise here]" << std::endl;
+	std::cout << "[insert animal noise here]" << std::endl;
 }

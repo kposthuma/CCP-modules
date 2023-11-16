@@ -26,7 +26,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal &src){
 }
 
 WrongAnimal::~WrongAnimal(){
-	std::cout << "Default destructor WrongAnimal called" << std::endl;
+	std::cout << "Destructor WrongAnimal called" << std::endl;
 }
 
 void WrongAnimal::operator=(const WrongAnimal& src){
@@ -43,10 +43,5 @@ std::string WrongAnimal::getType() const{
 }
 
 void WrongAnimal::makeSound() const{
-	if (type == "Cat")
-		std::cout << "Woof." << std::endl;
-	else if (type == "Dog")
-		std::cout << "Meow." << std::endl;
-	else
-		std::cout << "Did you know? A trade law from 1998 in Nepal banned several American treats, including Oreos, from entering the country due to their large amount of high-fructose corn syrup." << std::endl;
+	std::cout << "Did you know? A trade law from 1998 in Nepal banned several American treats, including Oreos, from entering the country due to their large amount of high-fructose corn syrup." << std::endl;
 }
