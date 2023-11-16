@@ -6,14 +6,14 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:40 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 14:38:05 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/16 15:21:16 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<Animal.hpp>
 
 Animal::Animal(){
-	std::cout << "Default constuctor Animal called.\nNo type has been set yet" << std::endl;
+	std::cout << "Default constuctor Animal called.\nNo type has been set." << std::endl;
 }
 
 Animal::Animal(std::string _type): type(_type){
