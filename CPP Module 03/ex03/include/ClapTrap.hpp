@@ -19,26 +19,31 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string name;
 		unsigned int hp;
 		unsigned int ep;
 		unsigned int ad;
 		unsigned int hp_max;
 	public:
-		ClapTrap(std::string _name);
+		ClapTrap();
+		ClapTrap(const std::string _name);
+		ClapTrap(const ClapTrap &fix);
 		~ClapTrap();
+		void operator=(const ClapTrap& op);
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		std::string getName() const;
-		int getHP() const;
-		int getEP() const;
-		int getAD() const;
+		unsigned int getHP() const;
+		unsigned int getEP() const;
+		unsigned int getAD() const;
+		unsigned int getHPMax() const;
+		void setName(const std::string _name);
 		void setHP(const unsigned int _hp);
-		void setHPmax(const unsigned int _hp);
 		void setEP(const unsigned int _ep);
 		void setAD(const unsigned int _ad);
+		void setHPMax(const unsigned int _hp);
 };
 
 #endif

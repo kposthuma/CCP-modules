@@ -6,18 +6,34 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/07 17:27:56 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/15 13:43:38 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/16 12:35:01 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<ClapTrap.hpp>
 
-ClapTrap::ClapTrap(std::string _name): name(_name), hp(10), ep(10), ad(0), hp_max(10){
+ClapTrap::ClapTrap(): name("no name"), hp(10), ep(10), ad(0), hp_max(10){
+	std::cout << "A ClapTrap has appeared." << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string _name): name(_name), hp(10), ep(10), ad(0){
 	std::cout << "A ClapTrap called " << name << " appeared." << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &fix){
+	operator=(fix);
 }
 
 ClapTrap::~ClapTrap(){
 	std::cout << "ClapTrap died!" << std::endl;
+}
+
+void ClapTrap::operator=(const ClapTrap& op){
+	std::cout << "A copy of ClapTrap " << op.getName() << " has appeared" << std::endl;
+	name = op.getName();
+	hp = op.getHP();
+	ep = op.getEP();
+	ad = op.getAD();
 }
 
 void ClapTrap::attack(const std::string& target){
@@ -69,24 +85,27 @@ std::string ClapTrap::getName() const{
 	return name;
 }
 
-int ClapTrap::getHP() const{
+unsigned int ClapTrap::getHP() const{
 	return hp;
 }
 
-int ClapTrap::getEP() const{
+unsigned int ClapTrap::getEP() const{
 	return ep;
 }
 
-int ClapTrap::getAD() const{
+unsigned int ClapTrap::getAD() const{
 	return ad;
+}
+unsigned int ClapTrap::getHPMax() const{
+	return hp_max;
+}
+
+void ClapTrap::setName(const std::string _name){
+	name = _name;
 }
 
 void ClapTrap::setHP(const unsigned int _hp){
 	hp = _hp;
-}
-
-void ClapTrap::setHPmax(const unsigned int _hp){
-	hp_max = _hp;
 }
 
 void ClapTrap::setEP(const unsigned int _ep){
@@ -95,4 +114,8 @@ void ClapTrap::setEP(const unsigned int _ep){
 
 void ClapTrap::setAD(const unsigned int _ad){
 	ad = _ad;
+}
+
+void ClapTrap::setHPMax(const unsigned int _hp){
+	hp_max = _hp;
 }

@@ -6,14 +6,13 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/08 16:14:15 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/15 14:22:29 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/16 12:13:28 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<ScavTrap.hpp>
 
-ScavTrap::ScavTrap(){
-	name = "no name";
+ScavTrap::ScavTrap(): ClapTrap(){
 	hp = 100;
 	ep = 50;
 	ad = 20;
@@ -21,8 +20,7 @@ ScavTrap::ScavTrap(){
 	std::cout << "This is a ScavTrap" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string _name){
-	name = _name;
+ScavTrap::ScavTrap(const std::string _name): ClapTrap(_name){
 	hp = 100;
 	ep = 50;
 	ad = 20;

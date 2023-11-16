@@ -26,7 +26,7 @@ class ClapTrap
 		unsigned int ad;
 	public:
 		ClapTrap();
-		ClapTrap(std::string _name);
+		ClapTrap(const std::string _name);
 		ClapTrap(const ClapTrap &fix);
 		void operator=(const ClapTrap& op);
 		~ClapTrap();

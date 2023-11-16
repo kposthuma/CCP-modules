@@ -6,10 +6,9 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/08 16:14:18 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/14 13:29:47 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/16 11:56:58 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef SCAVTRAP_HPP
 #define SCAVTRAP_HPP
@@ -20,8 +19,11 @@ class ScavTrap : public ClapTrap {
 	private:
 
 	public:
-		ScavTrap(std::string _name);
+		ScavTrap();
+		ScavTrap(const std::string _name);
+		ScavTrap(const ScavTrap &cpy);
 		~ScavTrap();
+		void operator=(const ScavTrap& op);
 		void guardGate();	
 };
 

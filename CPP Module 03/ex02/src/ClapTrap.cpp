@@ -6,14 +6,13 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/07 17:27:56 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/14 13:31:22 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/15 14:18:11 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<ClapTrap.hpp>
 
-ClapTrap::ClapTrap(): hp(10), ep(10), ad(0){
-	hp_max = hp;
+ClapTrap::ClapTrap(): name("no name"), hp(10), ep(10), ad(0), hp_max(10){
 	std::cout << "A ClapTrap has appeared." << std::endl;
 }
 
@@ -25,16 +24,16 @@ ClapTrap::ClapTrap(const ClapTrap &fix){
 	operator=(fix);
 }
 
+ClapTrap::~ClapTrap(){
+	std::cout << "ClapTrap died!" << std::endl;
+}
+
 void ClapTrap::operator=(const ClapTrap& op){
 	std::cout << "A copy of ClapTrap " << op.getName() << " has appeared" << std::endl;
 	name = op.getName();
 	hp = op.getHP();
 	ep = op.getEP();
 	ad = op.getAD();
-}
-
-ClapTrap::~ClapTrap(){
-	std::cout << "ClapTrap died!" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target){
