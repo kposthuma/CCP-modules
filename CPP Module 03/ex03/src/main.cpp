@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 12:32:40 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/15 12:55:11 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/16 13:30:12 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void)
 	you.guardGate();
 	you.whoAmI();
 	you.attack("nobody in particular");
-	you.takeDamage(1);
-	you.beRepaired(1);
+	you.takeDamage(99);
+	you.beRepaired(200);
 	return 0;
 }
