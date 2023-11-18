@@ -21,8 +21,8 @@
 class Fixed
 {
 	private:
-		int rawBits;
-		static const int eight = 8;
+		int _rawBits;
+		static const int _eight = 8;
 	public:
 		Fixed();
 		Fixed(const Fixed &fix);

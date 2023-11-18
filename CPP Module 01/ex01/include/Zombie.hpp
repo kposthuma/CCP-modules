@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 12:32:47 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/10/26 16:57:18 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/18 10:37:46 by koen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Zombie
 {
 	private:
-		std::string name;
+		std::string _name;
 	public:
 		void announce(void);
 		void setName(std::string name);

@@ -20,12 +20,12 @@
 class Fixed
 {
 	private:
-		int fix;
-		static const int eight = 8;
+		int _rawBits;
+		static const int _eight = 8;
 	public:
 		Fixed();
 		Fixed(Fixed &cp);
-		void operator=(const Fixed& op);
+		void operator=(const Fixed& cp);
 		~Fixed();
 		void setRawBits(int const raw);
 		int getRawBits(void) const;

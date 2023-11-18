@@ -6,7 +6,7 @@
 /*   By: koen <koen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/04 20:10:34 by koen          #+#    #+#                 */
-/*   Updated: 2023/11/07 17:14:41 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/18 10:47:20 by koen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 static float get_len(Point const a, Point const b)
 {
-	float height = std::abs(a.getX() - b.getX());
+	float h_eight = std::abs(a.getX() - b.getX());
 	float width = std::abs(a.getY() - b.getY());
-	float len = sqrt((height * height) + (width * width));
+	float len = sqrt((h_eight * h_eight) + (width * width));
 	return len;
 }
 
