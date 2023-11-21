@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:38:28 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 17:27:27 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/21 16:33:44 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Dog::Dog() : Animal("Dog"){
 	std::cout << "Default constuctor Dog called.\nAnimal type has been set to \"Dog\"" << std::endl;
-	Brain *_brain = new Brain;
+	_brain = new Brain;
 }
 
 Dog::Dog(const Dog &src){
@@ -29,6 +29,7 @@ Dog::~Dog(){
 
 void Dog::operator=(const Dog& src){
 	std::cout << "Copy assignment operator Dog called" << std::endl;
+	_brain = new Brain;
 	_type = src.getType();
 	_brain = src.getBrain();
 }
@@ -40,3 +41,8 @@ void Dog::makeSound() const{
 Brain *Dog::getBrain() const{
 	return _brain;
 }
+
+// Brain *Dog::copyBrain(const Dog &src) const{
+// 	Brain *brain = new Brain;
+// 	brain = src.
+// }

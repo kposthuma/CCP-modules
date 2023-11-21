@@ -6,14 +6,16 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 16:28:32 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 17:24:23 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/21 14:02:23 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<Brain.hpp>
 
 Brain::Brain(){
-	std::cout << "Default constuctor Brain called.\nNo type has been set." << std::endl;
+	std::cout << "Default constuctor Brain called." << std::endl;
+	for (int i = 0; i < 100; i++)
+		_ideas[i] = "No thoughts, head empty.";
 }
 
 Brain::Brain(std::string ideas[100]) {
@@ -47,11 +49,3 @@ void Brain::setIdea(std::string idea, int i){
 std::string Brain::getIdea(int i) const{
 	return _ideas[i];
 }
-
-// void Brain::setIdeas(std::string _ideas[100]){
-// 	ideas = _ideas;
-// }
-
-// std::string Brain::getIdeas()[100] const{
-// 	return ideas;
-// }

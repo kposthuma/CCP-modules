@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:38:47 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 16:48:11 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/21 16:33:29 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Cat : public Animal{
 		void operator=(const Cat &src);
 		
 		Brain *getBrain() const;
+		// Brain *copyBrain() const;
 		void makeSound() const;
 };
 

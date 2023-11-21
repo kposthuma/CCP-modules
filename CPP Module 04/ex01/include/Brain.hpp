@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 16:28:31 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 16:43:49 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/21 14:01:00 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ class Brain{
 		void operator=(const Brain &src);
 		void setIdea(std::string idea, int i);
 		std::string getIdea(int i) const;
-		// void setIdeas(std::string _ideas[100]);
-		// std::string getIdeas()[100] const;
 };
 
 #endif

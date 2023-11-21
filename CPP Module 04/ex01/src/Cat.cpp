@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:38:32 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 17:27:40 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/21 16:34:14 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat() : Animal("Cat"){
 	std::cout << "Default constuctor Cat called.\nAnimal type has been set to \"Cat\"" << std::endl;
-	Brain *_brain = new Brain;
+	_brain = new Brain;
 }
 
 Cat::Cat(const Cat &src){
@@ -29,6 +29,7 @@ Cat::~Cat(){
 
 void Cat::operator=(const Cat& src){
 	std::cout << "Copy assignment operator Cat called" << std::endl;
+	_brain = new Brain;
 	_type = src.getType();
 	_brain = src.getBrain();
 }
