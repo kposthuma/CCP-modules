@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 16:28:32 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/21 14:02:23 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/21 19:02:16 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Brain::Brain(){
 		_ideas[i] = "No thoughts, head empty.";
 }
 
-Brain::Brain(std::string ideas[100]) {
+Brain::Brain(std::string ideas[100]){
 	std::cout << "Constuctor Brain has been called." << std::endl;
 	for (int i = 0; i < 100; i++)
 		_ideas[i] = ideas[i];
@@ -42,10 +42,12 @@ void Brain::operator=(const Brain& src){
 }
 
 void Brain::setIdea(std::string idea, int i){
+	// std::cout << "Brain::setIdea function called" << std::endl;
 	std::string temp(idea);
 	_ideas[i] = temp;
 }
 
 std::string Brain::getIdea(int i) const{
+	// std::cout << "Brain::getIdea function called" << std::endl;
 	return _ideas[i];
 }

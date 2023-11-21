@@ -6,14 +6,14 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:38:32 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/21 16:34:14 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/21 19:02:46 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<Cat.hpp>
 
 Cat::Cat() : Animal("Cat"){
-	std::cout << "Default constuctor Cat called.\nAnimal type has been set to \"Cat\"" << std::endl;
+	std::cout << "Default constuctor Cat called. Animal type has been set to \"Cat\"" << std::endl;
 	_brain = new Brain;
 }
 
@@ -39,5 +39,6 @@ void Cat::makeSound() const{
 }
 
 Brain *Cat::getBrain() const{
+	// std::cout << "Cat::getBrain function called" << std::endl;
 	return _brain;
 }

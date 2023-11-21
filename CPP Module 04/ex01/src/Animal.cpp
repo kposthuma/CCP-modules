@@ -6,18 +6,18 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:40 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 16:44:13 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/21 19:06:40 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<Animal.hpp>
 
 Animal::Animal(){
-	std::cout << "Default constuctor Animal called.\nNo type has been set." << std::endl;
+	std::cout << "Default constuctor Animal called. No type has been set." << std::endl;
 }
 
 Animal::Animal(std::string type): _type(type){
-	std::cout << "Constuctor Animal has been called.\nType has been set to " << _type << std::endl;
+	std::cout << "Constuctor Animal has been called. Type has been set to " << _type << std::endl;
 }
 
 Animal::Animal(const Animal &src){
@@ -35,10 +35,12 @@ void Animal::operator=(const Animal& src){
 }
 
 void Animal::setType(std::string type){
+	// std::cout << "Animal::setType function called" << std::endl;
 	_type = type;
 }
 
 std::string Animal::getType() const{
+	// std::cout << "Animal::getType function called" << std::endl;
 	return _type;
 }
 
