@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Cure.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/11/16 13:36:43 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 14:32:51 by kposthum      ########   odam.nl         */
+/*   Created: 2023/11/16 13:36:50 by kposthum      #+#    #+#                 */
+/*   Updated: 2023/11/22 14:46:40 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<AAnimal.hpp>
-#include<Cat.hpp>
-#include<Dog.hpp>
-#include<WrongAnimal.hpp>
-#include<WrongCat.hpp>
+#ifndef CURE_HPP
+#define CURE_HPP
 
-int main(){
-	AAnimal *fish = new Dog;
+#include<string>
+#include<iomanip>
+#include<iostream>
+#include<AMateria.hpp>
+#include<ICharacter.hpp>
 
-	fish->makeSound();
-	delete fish;
+class Cure : public AMateria{
+	private:
 
-	// AAnimal bird;
-	// bird.makeSound();
-	return 0;
-}
+	public:
+		Cure();
+		Cure(const Cure &src);
+		virtual ~Cure();
+		void operator=(const Cure &src);
+
+		virtual Cure* clone() const;
+		virtual void use(ICharacter& target);
+};
+
+#endif

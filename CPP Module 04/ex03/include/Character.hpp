@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   AAnimal.hpp                                        :+:    :+:            */
+/*   Character.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:50 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 14:43:06 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/22 15:01:28 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AANIMAL_HPP
-#define AANIMAL_HPP
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
 #include<string>
 #include<iomanip>
 #include<iostream>
+#include<AMateria.hpp>
+#include<ICharacter.hpp>
 
-class AAnimal{
-	protected:
-		std::string _type;
+class Character : public ICharacter{
+	private:
+		AMateria *_inventory[4];
+		std::string _name;
 	public:
-		AAnimal();
-		AAnimal(std::string type);
-		AAnimal(const AAnimal &src);
-		virtual ~AAnimal();
-		void operator=(const AAnimal &src);
-		void setType(std::string type);
-		std::string getType() const;
+		Character();
+		Character(const Character &src);
+		~Character();
+		void operator=(const Character &src);
 
-		virtual void makeSound() const = 0;
+		virtual std::string const & getName() const;
+		virtual void equip(AMateria* m);
+		virtual void unequip(int idx);
+		virtual void use(int idx, ICharacter& target);
 };
 
 #endif
