@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Dog.hpp                                            :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/11/16 13:38:45 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 14:14:58 by kposthum      ########   odam.nl         */
+/*   Created: 2023/11/16 13:36:43 by kposthum      #+#    #+#                 */
+/*   Updated: 2023/11/22 14:26:37 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#include<AAnimal.hpp>
+#include<Cat.hpp>
+#include<Dog.hpp>
+#include<WrongAnimal.hpp>
+#include<WrongCat.hpp>
 
-#include<Animal.hpp>
-#include<Brain.hpp>
+int main(){
+	AAnimal *fish = new Dog;
 
-class Dog : public Animal{
-	private:
-		Brain *_brain;
-	public:
-		Dog();
-		Dog(const Dog &src);
-		~Dog();
-		void operator=(const Dog &src);
-
-		Brain *getBrain() const;
-		void makeSound() const;
-};
-
-#endif
+	fish->makeSound();
+	delete fish;
+	return 0;
+}

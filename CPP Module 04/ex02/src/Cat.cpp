@@ -6,18 +6,18 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:38:32 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 14:27:29 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/22 14:27:09 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<Cat.hpp>
 
-Cat::Cat() : Animal("Cat"){
-	std::cout << "Default constuctor Cat called. Animal type has been set to \"Cat\"" << std::endl;
+Cat::Cat() : AAnimal("Cat"){
+	std::cout << "Default constuctor Cat called. AAnimal type has been set to \"Cat\"" << std::endl;
 	_brain = new Brain;
 }
 
-Cat::Cat(const Cat &src) : Animal("Cat"){
+Cat::Cat(const Cat &src) : AAnimal("Cat"){
 	std::cout << "Copy constructor Cat has been called." << std::endl;
 	operator=(src);
 }

@@ -6,14 +6,14 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2023/11/22 14:15:19 by kposthum      ########   odam.nl          #
+#    Updated: 2023/11/22 14:26:18 by kposthum      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-CC := c++ -std=c++98 -pedantic -Wall -Werror -Wextra
-NAME := brain
+CC := clang++ -std=c++98 -pedantic -Wall -Werror -Wextra
+NAME := abstract
 SRCS := main.cpp \
-		Animal.cpp \
+		AAnimal.cpp \
 		Dog.cpp \
 		Cat.cpp \
 		WrongAnimal.cpp \
