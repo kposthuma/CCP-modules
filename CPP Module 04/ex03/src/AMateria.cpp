@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/22 15:34:51 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 15:47:09 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/22 17:40:47 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ std::string const & AMateria::getType() const{
 }
 
 // AMateria* AMateria::clone() const{
-// 	AMateria* clone = new AMateria;
-// 	return clone;
+// 	return 0;
 // }
 
 void AMateria::use(ICharacter& target){
