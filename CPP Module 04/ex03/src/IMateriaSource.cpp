@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   materiaSource.hpp                                 :+:    :+:            */
+/*   IMateriaSource.cpp                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/11/16 13:36:50 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 14:58:52 by kposthum      ########   odam.nl         */
+/*   Created: 2023/11/22 18:41:24 by kposthum      #+#    #+#                 */
+/*   Updated: 2023/11/22 18:45:15 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-#define MATERIASOURCE_HPP
-
 #include<string>
 #include<iostream>
-#include<AMateria.hpp>
 #include<IMateriaSource.hpp>
+#include<AMateria.hpp>
 
-class MateriaSource : public IMateriaSource{
-	private:
-		AMateria *_learned[4];
-	public:
-		MateriaSource();
-		MateriaSource(const MateriaSource &src);
-		~MateriaSource();
-		void operator=(const MateriaSource &src);
+IMateriaSource::IMateriaSource(){
+}
 
-		void learnMateria(AMateria*);
-		AMateria* createMateria(std::string const & type);
-};
+IMateriaSource::IMateriaSource(const IMateriaSource &src){
+	operator=(src);
+}
 
-#endif
+IMateriaSource::~IMateriaSource(){
+}
+
+void IMateriaSource::operator=(const IMateriaSource &src){
+}

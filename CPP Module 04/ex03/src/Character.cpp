@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/22 17:31:23 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 17:55:09 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/22 18:49:23 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,15 @@ Character::~Character(){
 
 void Character::operator=(const Character &src){
 	_name = src.getName();
-	//copy the inventory through depe copy
+	for (int i = 0; i < 4; i++)
+		_inventory[i] = (src.getMateria(i))->clone();
 }
 
 std::string const & Character::getName() const{
 	return _name;
+}
+AMateria *Character::getMateria(int idx) const{
+	return _inventory[idx];
 }
 
 void Character::equip(AMateria* m){
@@ -51,8 +55,6 @@ void Character::equip(AMateria* m){
 		i++;
 	if (i < 4)
 		_inventory[i] = m;
-	else
-		std::cout << "Inventory is full!" << std::endl;
 }
 
 void Character::unequip(int idx){
@@ -60,5 +62,6 @@ void Character::unequip(int idx){
 }
 
 void Character::use(int idx, ICharacter& target){
-	_inventory[idx]->use(target);
+	if (_inventory[idx] != NULL)
+		_inventory[idx]->use(target);
 }

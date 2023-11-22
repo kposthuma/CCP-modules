@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:50 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 14:50:33 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/22 18:42:54 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define ICHARACTER_HPP
 
 #include<string>
-#include<iomanip>
 #include<iostream>
 #include<AMateria.hpp>
 

@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:50 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 15:05:12 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/22 18:42:46 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define IMATERIASOURCE_HPP
 
 #include<string>
-#include<iomanip>
 #include<iostream>
 #include<AMateria.hpp>
 

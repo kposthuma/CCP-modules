@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:50 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 17:18:30 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/22 18:42:35 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define ICE_HPP
 
 #include<string>
-#include<iomanip>
+
 #include<iostream>
 #include<AMateria.hpp>
 #include<ICharacter.hpp>

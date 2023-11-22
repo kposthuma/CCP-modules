@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:50 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 17:42:09 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/22 18:43:01 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define CHARACTER_HPP
 
 #include<string>
-#include<iomanip>
 #include<iostream>
 #include<AMateria.hpp>
 #include<ICharacter.hpp>
@@ -31,6 +30,7 @@ class Character : public ICharacter{
 		void operator=(const Character &src);
 
 		std::string const & getName() const;
+		AMateria *getMateria(int idx) const;
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
