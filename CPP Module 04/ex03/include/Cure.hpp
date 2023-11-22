@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:50 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 14:46:40 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/22 17:21:00 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ class Cure : public AMateria{
 	public:
 		Cure();
 		Cure(const Cure &src);
-		virtual ~Cure();
+		~Cure();
 		void operator=(const Cure &src);
 
-		virtual Cure* clone() const;
-		virtual void use(ICharacter& target);
+		AMateria* clone() const;
+		void use(ICharacter& target);
 };
 
 #endif

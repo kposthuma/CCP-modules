@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:50 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 15:01:28 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/22 15:33:31 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Character : public ICharacter{
 		std::string _name;
 	public:
 		Character();
+		Character(const std::string & name);
 		Character(const Character &src);
 		~Character();
 		void operator=(const Character &src);

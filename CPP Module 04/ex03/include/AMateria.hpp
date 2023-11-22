@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:50 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 14:43:00 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/22 15:40:51 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 class AMateria{
 	protected:
-		std::string const _type;
+		std::string _type;
 	public:
 		AMateria();
 		AMateria(std::string const & type);
