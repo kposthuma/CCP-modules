@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:38:28 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/21 19:11:34 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/22 14:02:35 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ void Dog::operator=(const Dog& src){
 	std::cout << "Copy assignment operator Dog called" << std::endl;
 	_brain = new Brain;
 	_type = src.getType();
-	// _brain = src.getBrain();
-	for (int i = 0; i < 100; i++)
-		_brain->setIdea((src.getBrain())->getIdea(i), i);
+	*_brain = *src.getBrain();
 }
 
 void Dog::makeSound() const{
@@ -44,8 +42,3 @@ Brain *Dog::getBrain() const{
 	// std::cout << "Dog::getBrain function called" << std::endl;
 	return _brain;
 }
-
-// Brain *Dog::copyBrain(const Dog &src) const{
-// 	Brain *brain = new Brain;
-// 	brain = src.
-// }
