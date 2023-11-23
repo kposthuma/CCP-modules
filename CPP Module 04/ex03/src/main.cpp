@@ -6,17 +6,17 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/22 15:09:33 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/22 15:11:53 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/23 12:35:29 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<ICharacter.hpp>
+#include<Character.hpp>
 #include<AMateria.hpp>
 #include<Ice.hpp>
 #include<Cure.hpp>
 #include<IMateriaSource.hpp>
 #include<MateriaSource.hpp>
-#include<ICharacter.hpp>
-#include<Character.hpp>
 
 int main(){
 	IMateriaSource* src = new MateriaSource();
