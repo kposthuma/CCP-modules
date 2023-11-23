@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/22 18:41:24 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/23 13:10:30 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/23 13:48:26 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void MateriaSource::learnMateria(AMateria* m){
 	while (i < 4 && _learned[i] != NULL)
 		i++;
 	if (i < 4)
-		_learned[i] = m->clone();
+		_learned[i] = m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type){

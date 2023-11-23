@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/22 15:34:51 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/23 12:53:32 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/23 13:51:51 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include<iostream>
 #include<AMateria.hpp>
 
-AMateria::AMateria(){
+AMateria::AMateria() : _type("unspecified"){
 }
 
 AMateria::AMateria(std::string const & type) : _type(type){
@@ -44,5 +44,5 @@ std::string const & AMateria::getType() const{
 // }
 
 void AMateria::use(ICharacter& target){
-	std::cout << "Unspecified Materia used on " << target.getName() << "." << std::endl;
+	std::cout << _type << " Materia used on " << target.getName() << "." << std::endl;
 }
