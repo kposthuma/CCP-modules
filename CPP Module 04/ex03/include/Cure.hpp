@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:50 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/23 12:39:57 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/23 12:52:06 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include<string>
 #include<iostream>
 #include<AMateria.hpp>
-#include<ICharacter.hpp>
 
 class Cure : public AMateria{
 	private:

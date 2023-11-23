@@ -6,15 +6,13 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/22 18:41:24 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/23 12:26:01 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/23 13:10:30 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<string>
 #include<iostream>
 #include<MateriaSource.hpp>
-#include<IMateriaSource.hpp>
-#include<AMateria.hpp>
 
 MateriaSource::MateriaSource(){
 	for (int i = 0; i < 4; i++)

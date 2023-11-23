@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 13:36:50 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/23 12:36:52 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/23 13:07:34 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include<string>
 #include<iostream>
 #include<ICharacter.hpp>
+
+class ICharacter;
 
 class AMateria{
 	protected:

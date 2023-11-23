@@ -6,14 +6,13 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/22 15:34:51 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/23 12:37:48 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/23 12:53:32 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<string>
 #include<iostream>
 #include<AMateria.hpp>
-#include<ICharacter.hpp>
 
 AMateria::AMateria(){
 }
