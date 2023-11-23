@@ -27,6 +27,7 @@ class MateriaSource : public IMateriaSource{
 		~MateriaSource();
 		void operator=(const MateriaSource &src);
 
+		AMateria* getLearned(int idx) const;
 		void learnMateria(AMateria*);
 		AMateria* createMateria(std::string const & type);
 };
