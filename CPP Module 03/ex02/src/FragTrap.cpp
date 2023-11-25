@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 13:20:24 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 12:17:02 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/25 11:39:31 by koen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ FragTrap::FragTrap(): ClapTrap(){
 	hp = 100;
 	ep = 100;
 	ad = 30;
-	hp_max = 100;
+	hpMax = 100;
 	std::cout << "A FragTrap was born!" << std::endl;
 }
 
@@ -24,24 +24,24 @@ FragTrap::FragTrap(const std::string _name): ClapTrap(_name){
 	hp = 100;
 	ep = 100;
 	ad = 30;
-	hp_max = 100;
+	hpMax = 100;
 	std::cout << "A FragTrap was born!" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &fix){
-	operator=(fix);
+FragTrap::FragTrap(const FragTrap& src){
+	operator=(src);
 }
 
 FragTrap::~FragTrap(){
 	std::cout << "A FragTrap has passed away..." << std::endl;
 }
 
-void FragTrap::operator=(const FragTrap& op){
-	std::cout << "A copy of FragTrap " << op.getName() << " has appeared" << std::endl;
-	name = op.getName();
-	hp = op.getHP();
-	ep = op.getEP();
-	ad = op.getAD();
+void FragTrap::operator=(const FragTrap& src){
+	std::cout << "A copy of FragTrap " << src.getName() << " has appeared" << std::endl;
+	name = src.getName();
+	hp = src.getHP();
+	ep = src.getEP();
+	ad = src.getAD();
 }
 
 void FragTrap::highFivesGuys(void){

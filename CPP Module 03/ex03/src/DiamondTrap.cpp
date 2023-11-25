@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 14:16:35 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 12:35:14 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/25 11:39:31 by koen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ClapTrap("noname_Clap_name"), ScavTrap(), FragTrap(),  name("noname"){
 	hp = FragTrap::hp;
 	ep = ScavTrap::ep;
 	ad = FragTrap::ad;
-	hp_max = FragTrap::hp_max;
+	hpMax = FragTrap::hpMax;
 }
 DiamondTrap::DiamondTrap(std::string _name) : 
 ClapTrap(_name + "_Clap_name"), ScavTrap(_name), FragTrap(_name),  name(_name){
@@ -29,11 +29,11 @@ ClapTrap(_name + "_Clap_name"), ScavTrap(_name), FragTrap(_name),  name(_name){
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &op){
-	name = op.getName();
-	hp = op.getHP();
-	ep = op.getEP();
-	ad = op.getAD();
-	hp_max = op.getHPMax();
+	name = src.getName();
+	hp = src.getHP();
+	ep = src.getEP();
+	ad = src.getAD();
+	hpMax = src.getHPMax();
 }
 
 DiamondTrap::~DiamondTrap(){

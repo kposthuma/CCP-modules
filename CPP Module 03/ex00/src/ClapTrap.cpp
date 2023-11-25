@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/07 17:27:56 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/08 16:02:21 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/25 11:35:41 by koen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ ClapTrap::ClapTrap(std::string _name): name(_name), hp(10), ep(10), ad(0){
 	std::cout << "A ClapTrap called " << name << " appeared." << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &fix){
-	operator=(fix);
+ClapTrap::ClapTrap(const ClapTrap& src){
+	operator=(src);
 }
 
-void ClapTrap::operator=(const ClapTrap& op){
-	std::cout << "A copy of ClapTrap " << op.getName() << " has appeared" << std::endl;
-	name = op.getName();
-	hp = op.getHP();
-	ep = op.getEP();
-	ad = op.getAD();
+void ClapTrap::operator=(const ClapTrap& src){
+	std::cout << "A copy of ClapTrap " << src.getName() << " has appeared" << std::endl;
+	name = src.getName();
+	hp = src.getHP();
+	ep = src.getEP();
+	ad = src.getAD();
 }
 
 ClapTrap::~ClapTrap(){
@@ -81,14 +81,14 @@ std::string ClapTrap::getName() const{
 	return name;
 }
 
-int ClapTrap::getHP() const{
+unsigned int ClapTrap::getHP() const{
 	return hp;
 }
 
-int ClapTrap::getEP() const{
+unsigned int ClapTrap::getEP() const{
 	return ep;
 }
 
-int ClapTrap::getAD() const{
+unsigned int ClapTrap::getAD() const{
 	return ad;
 }

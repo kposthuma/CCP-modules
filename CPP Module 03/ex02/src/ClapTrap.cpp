@@ -6,13 +6,13 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/07 17:27:56 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/15 14:18:11 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/25 11:39:31 by koen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<ClapTrap.hpp>
 
-ClapTrap::ClapTrap(): name("no name"), hp(10), ep(10), ad(0), hp_max(10){
+ClapTrap::ClapTrap(): name("no name"), hp(10), ep(10), ad(0), hpMax(10){
 	std::cout << "A ClapTrap has appeared." << std::endl;
 }
 
@@ -20,20 +20,20 @@ ClapTrap::ClapTrap(std::string _name): name(_name), hp(10), ep(10), ad(0){
 	std::cout << "A ClapTrap called " << name << " appeared." << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &fix){
-	operator=(fix);
+ClapTrap::ClapTrap(const ClapTrap& src){
+	operator=(src);
 }
 
 ClapTrap::~ClapTrap(){
 	std::cout << "ClapTrap died!" << std::endl;
 }
 
-void ClapTrap::operator=(const ClapTrap& op){
-	std::cout << "A copy of ClapTrap " << op.getName() << " has appeared" << std::endl;
-	name = op.getName();
-	hp = op.getHP();
-	ep = op.getEP();
-	ad = op.getAD();
+void ClapTrap::operator=(const ClapTrap& src){
+	std::cout << "A copy of ClapTrap " << src.getName() << " has appeared" << std::endl;
+	name = src.getName();
+	hp = src.getHP();
+	ep = src.getEP();
+	ad = src.getAD();
 }
 
 void ClapTrap::attack(const std::string& target){
@@ -65,8 +65,8 @@ void ClapTrap::takeDamage(unsigned int amount){
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
-	if (hp + amount > hp_max)
-		amount = hp_max - hp;
+	if (hp + amount > hpMax)
+		amount = hpMax - hp;
 	if (ep > 0 && hp > 0){
 		std::cout << "ClapTrap " << name << " repaired itself for " 
 		<< amount << " points of health!" << std::endl;
@@ -114,5 +114,5 @@ void ClapTrap::setAD(const unsigned int _ad){
 }
 
 void ClapTrap::setHPMax(const unsigned int _hp){
-	hp_max = _hp;
+	hpMax = _hp;
 }

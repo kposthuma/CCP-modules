@@ -27,16 +27,16 @@ class ClapTrap
 	public:
 		ClapTrap();
 		ClapTrap(const std::string _name);
-		ClapTrap(const ClapTrap &fix);
-		void operator=(const ClapTrap& op);
+		ClapTrap(const ClapTrap& src);
+		void operator=(const ClapTrap& src);
 		~ClapTrap();
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		std::string getName() const;
-		int getHP() const;
-		int getEP() const;
-		int getAD() const;
+		unsigned int getHP() const;
+		unsigned int getEP() const;
+		unsigned int getAD() const;
 };
 
 #endif
