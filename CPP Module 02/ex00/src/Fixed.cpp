@@ -17,14 +17,14 @@ Fixed::Fixed(){
 	setRawBits(0);
 }
 
-Fixed::Fixed(Fixed &cp){
+Fixed::Fixed(Fixed& src){
 	std::cout << "Copy constructor called" << std::endl;
-	operator=(cp);
+	operator=(src);
 }
 
-void Fixed::operator=(const Fixed& op){
+void Fixed::operator=(const Fixed& src){
 	std::cout << "Copy assignment operator called" << std::endl;
-	_rawBits = op.getRawBits();
+	_rawBits = src.getRawBits();
 }
 
 Fixed::~Fixed(){

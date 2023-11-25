@@ -6,7 +6,7 @@
 /*   By: koen <koen@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/04 20:10:05 by koen          #+#    #+#                 */
-/*   Updated: 2023/11/07 15:26:08 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/25 11:28:40 by koen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void Point::operator=(const Point& point)
 
 Point::~Point(){}
 
-bool Point::operator==(const Point& op) const
+bool Point::operator==(const Point& src) const
 {
-	if (x == op.getX() && y == op.getY())
+	if (x == src.getX() && y == src.getY())
 		return true;
 	else
 		return false;

@@ -17,9 +17,9 @@ Fixed::Fixed(){
 	setRawBits(0);
 }
 
-Fixed::Fixed(const Fixed &fix){
+Fixed::Fixed(const Fixed &src){
 	// std::cout << "Copy constructor called" << std::endl;
-	operator=(fix);
+	operator=(src);
 }
 
 Fixed::Fixed(const int i){
@@ -34,80 +34,80 @@ Fixed::Fixed(const float f){
 	setRawBits(roundf(i));
 }
 
-void Fixed::operator=(const Fixed& op){
+void Fixed::operator=(const Fixed& src){
 	// std::cout << "Copy assignment operator called" << std::endl;
-	_rawBits = op.getRawBits();
+	_rawBits = src.getRawBits();
 }
 
-bool Fixed::operator>(const Fixed& op) const {
+bool Fixed::operator>(const Fixed& src) const {
 	// std::cout << "Larger than operator called" << std::endl;
-	if (_rawBits > op.getRawBits())
+	if (_rawBits > src.getRawBits())
 		return true;
 	else
 		return false;
 }
 
-bool Fixed::operator<(const Fixed& op) const {
+bool Fixed::operator<(const Fixed& src) const {
 	// std::cout << "Smaller than operator called" << std::endl;
-	if (_rawBits < op.getRawBits())
+	if (_rawBits < src.getRawBits())
 		return true;
 	else
 		return false;
 }
 
-bool Fixed::operator>=(const Fixed& op) const {
+bool Fixed::operator>=(const Fixed& src) const {
 	// std::cout << "Larger than or equal to operator called" << std::endl;
-	if (_rawBits >= op.getRawBits())
+	if (_rawBits >= src.getRawBits())
 		return true;
 	else
 		return false;
 }
 
-bool Fixed::operator<=(const Fixed& op) const {
+bool Fixed::operator<=(const Fixed& src) const {
 	// std::cout << "Smaller than or equal to operator called" << std::endl;
-	if (_rawBits <= op.getRawBits())
+	if (_rawBits <= src.getRawBits())
 		return true;
 	else
 		return false;
 }
 
-bool Fixed::operator==(const Fixed& op) const {
+bool Fixed::operator==(const Fixed& src) const {
 	// std::cout << "Equal to operator called" << std::endl;
-	if (_rawBits == op.getRawBits())
+	if (_rawBits == src.getRawBits())
 		return true;
 	else
 		return false;
 }
 
-bool Fixed::operator!=(const Fixed& op) const {
+bool Fixed::operator!=(const Fixed& src) const {
 	// std::cout << "Not equal to operator called" << std::endl;
-	if (_rawBits != op.getRawBits())
+	if (_rawBits != src.getRawBits())
 		return true;
 	else
 		return false;
 }
 
-float Fixed::operator+(const Fixed& op) const {
+float Fixed::operator+(const Fixed& src) const {
 	// std::cout << "Addition operator called" << std::endl;
-	float plus = toFloat() + op.toFloat();
+	float plus = toFloat() + src.toFloat();
 	return plus;
 }
 
-float Fixed::operator-(const Fixed& op) const {
+float Fixed::operator-(const Fixed& src) const {
 	// std::cout << "Subtraction operator called" << std::endl;
-	float min = toFloat() - op.toFloat();
+	float min = toFloat() - src.toFloat();
 	return min;
 }
 
-float Fixed::operator*(const Fixed& op) const {
+float Fixed::operator*(const Fixed& src) const {
 	// std::cout << "Multiplication operator called" << std::endl;
-	float mult = toFloat() * op.toFloat();
+	float mult = toFloat() * src.toFloat();
 	return mult;
 }
 
-float Fixed::operator/(const Fixed& op) const {
+float Fixed::operator/(const Fixed& src) const {
 	// std::cout << "Division operator called" << std::endl;
-	float divi = toFloat() / op.toFloat();
+	float divi = toFloat() / src.toFloat();
 	return divi;
 }
 
@@ -185,7 +185,7 @@ int Fixed::getRawBits(void) const{
 	// std::cout << "getRawBits member function called" << std::endl;
 	return _rawBits; }
 
-std::ostream & operator << (std::ostream &out, const Fixed& op){
-	out << op.toFloat();
+std::ostream & operator << (std::ostream &out, const Fixed& src){
+	out << src.toFloat();
 	return out;
 }

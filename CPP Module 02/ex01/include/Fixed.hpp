@@ -25,10 +25,10 @@ class Fixed
 		static const int _eight = 8;
 	public:
 		Fixed();
-		Fixed(const Fixed &fix);
+		Fixed(const Fixed &src);
 		Fixed(const int i);
 		Fixed(const float f);
-		void operator=(const Fixed& op);
+		void operator=(const Fixed& src);
 		~Fixed();
 		float toFloat( void ) const;
 		int toInt( void ) const;
@@ -36,6 +36,6 @@ class Fixed
 		int getRawBits(void) const;
 };
 
-std::ostream & operator<< (std::ostream &out, const Fixed& op);
+std::ostream & operator<< (std::ostream &out, const Fixed& src);
 
 #endif
