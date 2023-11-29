@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 13:20:24 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/25 11:39:31 by koen          ########   odam.nl         */
+/*   Updated: 2023/11/29 17:23:27 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,8 @@ void FragTrap::operator=(const FragTrap& src){
 }
 
 void FragTrap::highFivesGuys(void){
-	std::cout << "FragTrap " << name << " entusiastically offers you a high five!" << std::endl;
+	if (hp > 0)
+		std::cout << "FragTrap " << name << " entusiastically offers you a high five!" << std::endl;
+	else
+		std::cout << "FragTrap " << getName() << " has no health left!"<< std::endl;
 }

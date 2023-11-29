@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 14:16:35 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/25 11:39:31 by koen          ########   odam.nl         */
+/*   Updated: 2023/11/29 17:24:34 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,14 @@ ClapTrap(_name + "_Clap_name"), ScavTrap(_name), FragTrap(_name),  name(_name){
 	hp = FragTrap::hp;
 	ep = ScavTrap::ep;
 	ad = FragTrap::ad;
+	hpMax = FragTrap::hpMax;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &op){
+DiamondTrap::DiamondTrap(const DiamondTrap &src){
+	operator=(src);
+}
+
+void DiamondTrap::operator=(const DiamondTrap &src){
 	name = src.getName();
 	hp = src.getHP();
 	ep = src.getEP();
@@ -40,9 +45,9 @@ DiamondTrap::~DiamondTrap(){
 	std::cout << "A DiamondTrap exploded!" << std::endl;
 }
 
-void DiamondTrap::attack(std::string target){
-	ScavTrap::attack(target);
-}
+// void DiamondTrap::attack(std::string target){
+// 	ScavTrap::attack(target);
+// }
 
 void DiamondTrap::whoAmI(){
 	std::cout << "This DiamondTrap's name is " << name 

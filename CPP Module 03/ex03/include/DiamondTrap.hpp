@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 14:16:26 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 12:29:13 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/29 17:20:43 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 		DiamondTrap(const DiamondTrap &op);
 		~DiamondTrap();
 		void operator=(const DiamondTrap &op);
-		void attack(std::string target);
+		// void attack(std::string target);
+		using ScavTrap::attack;
 		void whoAmI();
 };
 

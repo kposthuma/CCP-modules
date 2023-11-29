@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/08 16:14:15 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/25 11:42:41 by koen          ########   odam.nl         */
+/*   Updated: 2023/11/29 17:25:09 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,8 @@ void ScavTrap::operator=(const ScavTrap& src){
 }
 
 void ScavTrap::guardGate(){
-	std::cout << "ScavTrap " << getName() << " is now in gatekeeper mode"<< std::endl;
+	if (hp > 0)
+		std::cout << "ScavTrap " << getName() << " is now in gatekeeper mode"<< std::endl;
+	else
+		std::cout << "ScavTrap " << getName() << " has no health left!"<< std::endl;
 }
