@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 14:16:35 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/29 17:24:34 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/29 17:49:54 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ DiamondTrap::DiamondTrap() :
 ClapTrap("noname_Clap_name"), ScavTrap(), FragTrap(),  name("noname"){
 	std::cout << "A DiamondTrap materialized out of thin air" << std::endl;
 	hp = FragTrap::hp;
-	ep = ScavTrap::ep;
+	ep = ScavTrap::ep; // not how this works
 	ad = FragTrap::ad;
 	hpMax = FragTrap::hpMax;
 }

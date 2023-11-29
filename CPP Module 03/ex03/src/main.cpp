@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 12:32:40 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/16 13:30:12 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/29 17:48:36 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main(void)
 {
 	DiamondTrap you("You");
 
+	std::cout << "attck damage: " << you.getAD() << "\nmax hp: " << you.getHPMax() << "\nenergy: " << you.getEP() << std::endl;
 	you.highFivesGuys();
 	you.guardGate();
 	you.whoAmI();
