@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/22 15:09:33 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/23 12:54:38 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/29 17:28:24 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ int main(){
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+
 	
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
