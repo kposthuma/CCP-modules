@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 14:16:35 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/30 18:47:29 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/30 19:19:28 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,6 @@ void DiamondTrap::operator=(const DiamondTrap &src){
 DiamondTrap::~DiamondTrap(){
 	std::cout << "A DiamondTrap exploded!" << std::endl;
 }
-
-// void DiamondTrap::attack(std::string target){
-// 	ScavTrap::attack(target);
-// }
 
 void DiamondTrap::whoAmI(){
 	std::cout << "This DiamondTrap's name is " << _name 
