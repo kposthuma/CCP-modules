@@ -6,25 +6,25 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 13:20:24 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/29 17:23:27 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/11/30 18:40:17 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<FragTrap.hpp>
 
 FragTrap::FragTrap(): ClapTrap(){
-	hp = 100;
-	ep = 100;
-	ad = 30;
-	hpMax = 100;
+	_hp = 100;
+	_ep = 100;
+	_ad = 30;
+	_hpMax = 100;
 	std::cout << "A FragTrap was born!" << std::endl;
 }
 
-FragTrap::FragTrap(const std::string _name): ClapTrap(_name){
-	hp = 100;
-	ep = 100;
-	ad = 30;
-	hpMax = 100;
+FragTrap::FragTrap(const std::string name): ClapTrap(name){
+	_hp = 100;
+	_ep = 100;
+	_ad = 30;
+	_hpMax = 100;
 	std::cout << "A FragTrap was born!" << std::endl;
 }
 
@@ -38,15 +38,15 @@ FragTrap::~FragTrap(){
 
 void FragTrap::operator=(const FragTrap& src){
 	std::cout << "A copy of FragTrap " << src.getName() << " has appeared" << std::endl;
-	name = src.getName();
-	hp = src.getHP();
-	ep = src.getEP();
-	ad = src.getAD();
+	_name = src.getName();
+	_hp = src.getHP();
+	_ep = src.getEP();
+	_ad = src.getAD();
 }
 
 void FragTrap::highFivesGuys(void){
-	if (hp > 0)
-		std::cout << "FragTrap " << name << " entusiastically offers you a high five!" << std::endl;
+	if (_hp > 0)
+		std::cout << "FragTrap " << _name << " entusiastically offers you a high five!" << std::endl;
 	else
 		std::cout << "FragTrap " << getName() << " has no health left!"<< std::endl;
 }

@@ -6,17 +6,17 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/07 17:27:56 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/25 11:39:31 by koen          ########   odam.nl         */
+/*   Updated: 2023/11/30 18:37:46 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<ClapTrap.hpp>
 
-ClapTrap::ClapTrap(): name("no name"), hp(10), ep(10), ad(0), hpMax(10){
+ClapTrap::ClapTrap(): _name("no name"), _hp(10), _ep(10), _ad(0), _hpMax(10){
 	std::cout << "A ClapTrap has appeared." << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string _name): name(_name), hp(10), ep(10), ad(0){
+ClapTrap::ClapTrap(std::string name): _name(name), _hp(10), _ep(10), _ad(0), _hpMax(10){
 	std::cout << "A ClapTrap called " << name << " appeared." << std::endl;
 }
 
@@ -30,93 +30,93 @@ ClapTrap::~ClapTrap(){
 
 void ClapTrap::operator=(const ClapTrap& src){
 	std::cout << "A copy of ClapTrap " << src.getName() << " has appeared" << std::endl;
-	name = src.getName();
-	hp = src.getHP();
-	ep = src.getEP();
-	ad = src.getAD();
-	hpMax = src.getHPMax();
+	_name = src.getName();
+	_hp = src.getHP();
+	_ep = src.getEP();
+	_ad = src.getAD();
 }
 
 void ClapTrap::attack(const std::string& target){
-	if (ep > 0 && hp > 0){
-		std::cout << "ClapTrap " << name << " attacks " 
-		<< target << " for " << ad << " points of damage!" << std::endl;
-		ep--;
-		std::cout << "Current energy: " << ep << std::endl;
+	if (_ep > 0 && _hp > 0){
+		std::cout << "ClapTrap " << _name << " attacks " 
+		<< target << " for " << _ad << " points of damage!" << std::endl;
+		_ep--;
+		std::cout << "Current energy: " << _ep << std::endl;
 	}
-	else if (hp == 0)
-		std::cout << "ClapTrap " << name << " has no health left!" << std::endl;
-	else if (ep == 0)
-		std::cout << "ClapTrap " << name << " has no energy left!" << std::endl;
+	else if (_hp == 0)
+		std::cout << "ClapTrap " << _name << " has no health left!" << std::endl;
+	else if (_ep == 0)
+		std::cout << "ClapTrap " << _name << " has no energy left!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
-	if (amount > hp)
-		amount = hp;
-	if (hp == 0)
-		std::cout << "ClapTrap " << name << " is already dead!" << std::endl;
+	if (amount > _hp)
+		amount = _hp;
+	if (_hp == 0)
+		std::cout << "ClapTrap " << _name << " is already dead!" << std::endl;
 	else {
-		std::cout << "ClapTrap " << name << " took " 
+		std::cout << "ClapTrap " << _name << " took " 
 		<< amount << " points of damage!" << std::endl;
-		hp -= amount;
-		std::cout << "Current health: " << hp << std::endl;
-		if (hp == 0)
-			std::cout << "ClapTrap " << name << " has no Hit points left!" << std::endl;
+		_hp -= amount;
+		std::cout << "Current health: " << _hp << std::endl;
+		if (_hp == 0)
+			std::cout << "ClapTrap " << _name << " has no Hit points left!" << std::endl;
 	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
-	if (hp + amount > hpMax)
-		amount = hpMax - hp;
-	if (ep > 0 && hp > 0){
-		std::cout << "ClapTrap " << name << " repaired itself for " 
+	if (_hp + amount > _hpMax)
+		amount = _hpMax - _hp;
+	if (_ep > 0 && _hp > 0){
+		std::cout << "ClapTrap " << _name << " repaired itself for " 
 		<< amount << " points of health!" << std::endl;
-		ep--;
-		hp += amount;
-		std::cout << "Current health: " << hp << std::endl;
-		std::cout << "Current energy: " << ep << std::endl;
+		_ep--;
+		_hp += amount;
+		std::cout << "Current health: " << _hp << std::endl;
+		std::cout << "Current energy: " << _ep << std::endl;
 	}
-	else if (ep == 0)
-		std::cout << "ClapTrap " << name << " has no energy left!" << std::endl;
+	else if (_ep == 0)
+		std::cout << "ClapTrap " << _name << " has no energy left!" << std::endl;
 	else
-		std::cout << "ClapTrap " << name << " has no health left!" << std::endl;
+		std::cout << "ClapTrap " << _name << " has no health left!" << std::endl;
 }
 
 std::string ClapTrap::getName() const{
-	return name;
+	return _name;
 }
 
 unsigned int ClapTrap::getHP() const{
-	return hp;
+	return _hp;
 }
 
 unsigned int ClapTrap::getEP() const{
-	return ep;
+	return _ep;
 }
 
 unsigned int ClapTrap::getAD() const{
-	return ad;
+	return _ad;
 }
+
 unsigned int ClapTrap::getHPMax() const{
-	return hpMax;
+	return _hpMax;
 }
 
-void ClapTrap::setName(const std::string _name){
-	name = _name;
+void ClapTrap::setName(const std::string name){
+	_name = name;
 }
 
-void ClapTrap::setHP(const unsigned int _hp){
-	hp = _hp;
+void ClapTrap::setHP(const unsigned int hp){
+	_hp = hp;
 }
 
-void ClapTrap::setEP(const unsigned int _ep){
-	ep = _ep;
+void ClapTrap::setEP(const unsigned int ep){
+	_ep = ep;
 }
 
-void ClapTrap::setAD(const unsigned int _ad){
-	ad = _ad;
+void ClapTrap::setAD(const unsigned int ad){
+	_ad = ad;
 }
 
-void ClapTrap::setHPMax(const unsigned int _hp){
-	hpMax = _hp;
+void ClapTrap::setHPMax(const unsigned int hp){
+	_hpMax = hp;
 }

@@ -20,10 +20,10 @@
 class ClapTrap
 {
 	private:
-		std::string name;
-		unsigned int hp;
-		unsigned int ep;
-		unsigned int ad;
+		std::string _name;
+		unsigned int _hp;
+		unsigned int _ep;
+		unsigned int _ad;
 	public:
 		ClapTrap();
 		ClapTrap(const std::string _name);
