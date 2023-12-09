@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 13:20:24 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/30 18:40:17 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/12/09 14:16:15 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ void FragTrap::operator=(const FragTrap& src){
 	_hp = src.getHP();
 	_ep = src.getEP();
 	_ad = src.getAD();
+	_hpMax = src.getHPMax();
+}
+
+void FragTrap::attack(const std::string& target){
+	std::cout << "Attack as a FragTrap: ";
+	ClapTrap::attack(target);
 }
 
 void FragTrap::highFivesGuys(void){

@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/08 16:14:15 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/30 18:38:13 by kposthum      ########   odam.nl         */
+/*   Updated: 2023/12/09 14:06:13 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ void ScavTrap::operator=(const ScavTrap& src){
 	_ep = src.getEP();
 	_ad = src.getAD();
 	_hpMax = src.getHPMax();
+}
+
+void ScavTrap::attack(const std::string& target){
+	std::cout << "Attack as a ScavTrap: ";
+	ClapTrap::attack(target);
 }
 
 void ScavTrap::guardGate(){
