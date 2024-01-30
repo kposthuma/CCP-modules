@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/01/30 16:28:28 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/30 17:00:22 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 class	Bureaucrat::GradeTooHighException : public std::exception{
 	public:
 		const char	*what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW{
-			return "Grade too high. Number cannot be lower than 1.";
+			return "Grade too high.";
 		}
 };
 
 class	Bureaucrat::GradeTooLowException : public std::exception{
 	public:
 		const char	*what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW{
-			return "Grade too low. Number cannot exceed 150.";
+			return "Grade too low.";
 		}
 };
 
