@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:26:19 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/01/29 15:05:26 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/30 13:36:05 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 
 class Bureaucrat
 {
+	class	GradeTooHighException;
+	class	GradeTooLowException;
+
 	private:
 		const std::string	_name;
 		int					_grade;
@@ -33,8 +36,6 @@ class Bureaucrat
 		void		incementGrade();
 		void		decrementGrade();
 
-		static std::string	GradeTooHighException();
-		static std::string	GradeTooLowException();
 };
 
 std::ostream & operator<< (std::ostream &out, const Bureaucrat& src);
