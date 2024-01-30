@@ -6,11 +6,11 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2024/01/29 12:53:14 by kposthum      ########   odam.nl          #
+#    Updated: 2024/01/30 13:52:06 by kposthum      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-CC := c++ -std=c++98 -pedantic -Wall -Werror -Wextra
+CC := c++ -Wall -Werror -Wextra -std=c++98 -pedantic
 NAME := bureaucrat
 SRCS := main.cpp \
 		Bureaucrat.cpp

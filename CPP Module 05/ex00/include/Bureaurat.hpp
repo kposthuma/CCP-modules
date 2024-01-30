@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:26:19 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/01/30 13:36:05 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/30 14:01:39 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,13 @@ class Bureaucrat
 		const std::string	_name;
 		int					_grade;
 	public:
+		Bureaucrat();
+		Bureaucrat(std::string name);
+		Bureaucrat(int grade);
 		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const Bureaucrat &src);
 		~Bureaucrat();
+		Bureaucrat operator=(const Bureaucrat &src);
 
 		std::string	getName() const;
 		int			getGrade() const;

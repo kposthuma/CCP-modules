@@ -6,35 +6,57 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/01/30 13:05:42 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/30 14:01:41 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Bureaurat.hpp>
 
-class	Bureaucrat::GradeTooHighException{
+class	Bureaucrat::GradeTooHighException : public std::exception{
 	public:
-		std::string what() const{
-			return "Grade too high. Number cannot be lower than 1.\n";
+		const char	*what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW{
+			return "Grade too high. Number cannot be lower than 1.";
 		}
 };
 
-class	Bureaucrat::GradeTooLowException{
+class	Bureaucrat::GradeTooLowException : public std::exception{
 	public:
-		std::string what() const{
-			return "Grade too low. Number cannot exceed 150.\n";
+		const char	*what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW{
+			return "Grade too low. Number cannot exceed 150.";
 		}
 };
+
+Bureaucrat::Bureaucrat(): _name("Cog in the Machine"), _grade(150){
+}
+
+Bureaucrat::Bureaucrat(std::string name) :_name(name), _grade(150){
+}
+
+Bureaucrat::Bureaucrat(int grade) try: 
+	_grade(grade < 1 ? throw GradeTooHighException() : grade
+		&& grade > 150 ? throw GradeTooLowException() : grade){
+}
+catch (std::exception const& e){
+	std::cout << e.what() << std::endl;
+}
+catch(...){
+	std::cout << "Unhandled exception" << std::endl;
+}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) try: 
 	_name(name), _grade(grade < 1 ? throw GradeTooHighException() : grade
 		&& grade > 150 ? throw GradeTooLowException() : grade){
 }
-catch (GradeTooLowException const& e){
+catch (std::exception const& e){
 	std::cout << e.what() << std::endl;
 }
-catch (GradeTooHighException const& e){
-	std::cout << e.what() << std::endl;
+catch(...){
+	std::cout << "Unhandled exception" << std::endl;
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat &src) try: 
+	_name(src.getName()), _grade(src.getGrade() < 1 ? throw GradeTooHighException() : src.getGrade()
+		&& src.getGrade() > 150 ? throw GradeTooLowException() : src.getGrade()){
 }
 catch (std::exception const& e){
 	std::cout << e.what() << std::endl;
@@ -44,6 +66,10 @@ catch(...){
 }
 
 Bureaucrat::~Bureaucrat(){
+}
+
+Bureaucrat	Bureaucrat::operator=(const Bureaucrat &src){
+	return src;
 }
 
 std::string	Bureaucrat::getName() const{
@@ -56,23 +82,25 @@ int	Bureaucrat::getGrade() const{
 
 void	Bureaucrat::incementGrade(){
 	try{
-		_grade--;
-		if (_grade < 1)
-			throw(_grade);
+		if (_grade == 1)
+			throw GradeTooHighException();
+		else
+			_grade--;
 	}
-	catch(int _grade){
-		GradeTooHighException();
+	catch(std::exception const& e){
+		std::cout << e.what() << std::endl;
 	}
 }
 
 void	Bureaucrat::decrementGrade(){
 	try{
-		_grade++;
-		if (_grade > 150)
-			throw(_grade);
+		if (_grade == 150)
+			throw GradeTooLowException();
+		else
+			_grade++;
 	}
-	catch(int _grade){
-		GradeTooLowException();
+	catch(std::exception const& e){
+		std::cout << e.what() << std::endl;
 	}
 }
 
