@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/01/30 17:00:22 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/31 10:31:18 by koen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,13 @@ void	Bureaucrat::decrementGrade(){
 	catch(std::exception const& e){
 		std::cout << e.what() << std::endl;
 	}
+}
+
+void	Bureaucrat::signForm(const Form &form) const{
+	if (!form.getSignGrade())
+		std::cout << _name << " couln't sign form " << form.getName() << " because their grade was too low." << std::endl;
+	else
+		std::cout << _name << " could sign form " << form.getName() << std::endl;
 }
 
 std::ostream & operator<< (std::ostream &out, const Bureaucrat& src){

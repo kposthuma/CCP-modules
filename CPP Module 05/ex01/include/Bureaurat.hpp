@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:26:19 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/01/30 14:01:39 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/31 10:35:06 by koen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #include <iostream>
 #include <exception> 
 #include <typeinfo>
+#include <Form.hpp>
+
+class Form;
 
 class Bureaucrat
 {
@@ -40,7 +43,7 @@ class Bureaucrat
 
 		void		incementGrade();
 		void		decrementGrade();
-
+		void		signForm(const Form &form) const;
 };
 
 std::ostream & operator<< (std::ostream &out, const Bureaucrat& src);

@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/01/30 17:00:12 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/31 10:33:41 by koen          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,50 +30,6 @@ Form::Form(): _name("Computer says no"), _signed(false), _signGrade(150), _execG
 }
 
 Form::Form(std::string name) :_name(name), _signed(false), _signGrade(150), _execGrade(150){
-}
-
-Form::Form(int signGrade) try: _name("Form"), _signed(false),
-	_signGrade(signGrade < 1 ? throw GradeTooHighException() : signGrade
-		&& signGrade > 150 ? throw GradeTooLowException() : signGrade), _execGrade(150){
-}
-catch (std::exception const& e){
-	std::cout << e.what() << std::endl;
-}
-catch(...){
-	std::cout << "Unhandled exception" << std::endl;
-}
-
-Form::Form(int execGrade) try: _name("Computer says no"), _signed(false), _signGrade(150), 
-	_execGrade(execGrade < 1 ? throw GradeTooHighException() : execGrade
-		&& execGrade > 150 ? throw GradeTooLowException() : execGrade){
-}
-catch (std::exception const& e){
-	std::cout << e.what() << std::endl;
-}
-catch(...){
-	std::cout << "Unhandled exception" << std::endl;
-}
-
-Form::Form(std::string name, int signGrade) try: _name(name), _signed(false),
-	_signGrade(signGrade < 1 ? throw GradeTooHighException() : signGrade
-		&& signGrade > 150 ? throw GradeTooLowException() : signGrade), _execGrade(150){
-}
-catch (std::exception const& e){
-	std::cout << e.what() << std::endl;
-}
-catch(...){
-	std::cout << "Unhandled exception" << std::endl;
-}
-
-Form::Form(std::string name, int execGrade) try: _name(name), _signed(false), _signGrade(150),
-	 _execGrade(execGrade < 1 ? throw GradeTooHighException() : execGrade
-		&& execGrade > 150 ? throw GradeTooLowException() : execGrade){
-}
-catch (std::exception const& e){
-	std::cout << e.what() << std::endl;
-}
-catch(...){
-	std::cout << "Unhandled exception" << std::endl;
 }
 
 Form::Form(std::string name, int signGrade, int execGrade) try: _name(name), _signed(false),
@@ -125,31 +81,20 @@ int	Form::getExecGrade() const{
 	return _execGrade;
 }
 
-// void	Form::incementGrade(){
-// 	try{
-// 		if (_grade == 1)
-// 			throw GradeTooHighException();
-// 		else
-// 			_grade--;
-// 	}
-// 	catch(std::exception const& e){
-// 		std::cout << e.what() << std::endl;
-// 	}
-// }
+void	Form::beSigned(const Bureaucrat &bur){
+	try{
+		if (bur.getGrade() > _signGrade)
+			throw GradeTooLowException();
+		else
+			_signed = true;
+	}
+	catch(std::exception const &e){
+		std::cout << e.what() << std::endl;
+	}
+	bur.signForm(*this);
+}
 
-// void	Form::decrementGrade(){
-// 	try{
-// 		if (_grade == 150)
-// 			throw GradeTooLowException();
-// 		else
-// 			_grade++;
-// 	}
-// 	catch(std::exception const& e){
-// 		std::cout << e.what() << std::endl;
-// 	}
-// }
-
-std::ostream & operator<< (std::ostream &out, const Form& src){
+std::ostream	&operator<< (std::ostream &out, const Form& src){
 	out << src.getName() << ", Form sign grade " << src.getSignGrade()
 	<< "and execute grade" << src.getExecGrade() << ", has ";
 	if (!src.getSigned())
