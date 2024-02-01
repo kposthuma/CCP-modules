@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/01 12:34:39 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 14:54:53 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/02/01 16:57:49 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 #include<AForm.hpp>
+#include<cstdlib>
+#include<time.h>
 
 class RobotomyRequestForm : public AForm{
 	private:

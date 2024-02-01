@@ -13,11 +13,11 @@
 #include <ShrubberyCreationForm.hpp>
 
 ShrubberyCreationForm::ShrubberyCreationForm():
-	AForm("Presidential Pardon Form", 145, 137), _target("the backyard"){
+	AForm("Shrubbery Creation Form", 145, 137), _target("the backyard"){
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target):
-	AForm("Presidential Pardon Form", 145, 137), _target(target){
+	AForm("Shrubbery Creation Form", 145, 137), _target(target){
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src):
@@ -37,10 +37,10 @@ std::string	ShrubberyCreationForm::getTarget() const{
 
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const{
 	if (executeCheck(executor)){
-		if (std::rand() % 2 == 0)
-			std::cout << _target << " has successfully undergone a robotomy." << std::endl;
-		else
-			std::cout << _target << "'s robotomy failed." << std::endl;
-	}		
+		std::string fileName = _target + "_shrubbery";
+		std::ofstream outfile (fileName.c_str());
+		outfile << "                                                         .\n                                              .         ;\n                 .              .              ;%     ;;\n                   ,           ,                :;%  %;\n                    :         ;                   :;%;'     .,\n           ,.        %;     %;            ;        %;'    ,;\n             ;       ;%;  %%;        ,     %;    ;%;    ,%'\n              %;       %;%;      ,  ;       %;  ;%;   ,%;'\n               ;%;      %;        ;%;        % ;%;  ,%;'\n                `%;.     ;%;     %;'         `;%%;.%;'\n                 `:;%.    ;%%. %@;        %; ;@%;%'\n                    `:%;.  :;bd%;          %;@%;'\n                      `@%:.  :;%.         ;@@%;'\n                        `@%.  `;@%.      ;@@%;\n                          `@%%. `@%%    ;@@%;\n                            ;@%. :@%%  %@@%;\n                              %@bd%%%bd%%:;\n                                #@%%%%%:;;\n                                %@@%%%::;\n                                %@@@%(o);  . '\n                                %@@@o%;:(.,'\n                            `.. %@@@o%::;\n                               `)@@@o%::;\n                                %@@(o)::;\n                               .%@@@@%::;\n                               ;%@@@@%::;.\n                              ;%@@@@%%:;;;.\n                          ...;%@@@@@%%:;;;;,.. " << std::endl;
+		outfile.close();
+	}
 	executor.executeForm(*this);
 }

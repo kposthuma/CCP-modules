@@ -6,18 +6,18 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/01 12:32:46 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 15:38:28 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/02/01 17:11:50 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <RobotomyRequestForm.hpp>
 
 RobotomyRequestForm::RobotomyRequestForm():
-	AForm("Presidential Pardon Form", 72, 45), _target("Your mother"){
+	AForm("Robotomy Request Form", 72, 45), _target("Your mother"){
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target):
-	AForm("Presidential Pardon Form", 72, 45), _target(target){
+	AForm("Robotomy Request Form", 72, 45), _target(target){
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src):
@@ -35,8 +35,17 @@ std::string	RobotomyRequestForm::getTarget() const{
 	return _target;
 }
 
+static int getRand(){
+	srand((unsigned) time(NULL));
+	return (rand());
+}
+
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const{
-	executeCheck(executor);
-	// do something
+	if (executeCheck(executor)){
+		if (getRand() % 2 == 0)
+			std::cout << _target << " has successfully undergone a robotomy." << std::endl;
+		else
+			std::cout << _target << "'s robotomy failed." << std::endl;
+	}	
 	executor.executeForm(*this);
 }
