@@ -12,7 +12,12 @@
 
 #include <ShrubberyCreationForm.hpp>
 
-ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Presidential Pardon Form", 25, 5), _target("the backyard"){
+ShrubberyCreationForm::ShrubberyCreationForm():
+	AForm("Presidential Pardon Form", 145, 137), _target("the backyard"){
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target):
+	AForm("Presidential Pardon Form", 145, 137), _target(target){
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src):
@@ -31,7 +36,11 @@ std::string	ShrubberyCreationForm::getTarget() const{
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const{
-	executeCheck(executor);
-	// do something
+	if (executeCheck(executor)){
+		if (std::rand() % 2 == 0)
+			std::cout << _target << " has successfully undergone a robotomy." << std::endl;
+		else
+			std::cout << _target << "'s robotomy failed." << std::endl;
+	}		
 	executor.executeForm(*this);
 }

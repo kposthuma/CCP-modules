@@ -6,13 +6,18 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/01 12:32:46 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 14:54:36 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/02/01 15:38:28 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <RobotomyRequestForm.hpp>
 
-RobotomyRequestForm::RobotomyRequestForm(): AForm("Presidential Pardon Form", 25, 5), _target("Your mother"){
+RobotomyRequestForm::RobotomyRequestForm():
+	AForm("Presidential Pardon Form", 72, 45), _target("Your mother"){
+}
+
+RobotomyRequestForm::RobotomyRequestForm(std::string target):
+	AForm("Presidential Pardon Form", 72, 45), _target(target){
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src):

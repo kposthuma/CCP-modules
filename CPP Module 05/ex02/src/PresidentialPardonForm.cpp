@@ -6,13 +6,18 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/01 12:33:06 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 14:54:55 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/02/01 15:35:47 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <PresidentialPardonForm.hpp>
 
-PresidentialPardonForm::PresidentialPardonForm(): AForm("Presidential Pardon Form", 25, 5), _target("John Cena"){
+PresidentialPardonForm::PresidentialPardonForm():
+	AForm("Presidential Pardon Form", 25, 5), _target("John Cena"){
+}
+
+PresidentialPardonForm::PresidentialPardonForm(std::string target):
+	AForm("Presidential Pardon Form", 25, 5), _target(target){
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src):
@@ -31,7 +36,7 @@ std::string	PresidentialPardonForm::getTarget() const{
 }
 
 void	PresidentialPardonForm::execute(Bureaucrat const &executor) const{
-	executeCheck(executor);
-	// do something
+	if (executeCheck(executor))
+		std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 	executor.executeForm(*this);
 }
