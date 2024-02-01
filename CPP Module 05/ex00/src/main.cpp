@@ -6,21 +6,21 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:37 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/01/30 14:35:40 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/02/01 11:47:27 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Bureaurat.hpp>
 
-Bureaucrat *test(){
-	Bureaucrat *jack;
+Bureaucrat *hireBureaucrat(std::string name, int grade){
+	Bureaucrat *bur;
 	try{
-		jack = new Bureaucrat("Jack", 999);
+		bur = new Bureaucrat(name, grade);
 	}
 	catch(std::exception const &e){
 		return NULL;
 	}
-	return jack;
+	return bur;
 }
 
 int	main (void){
@@ -32,7 +32,6 @@ int	main (void){
 
 	Bureaucrat jeremy = james;
 
-
 	john.incementGrade();
 	james.decrementGrade();
 	jeremy.incementGrade();
@@ -41,7 +40,7 @@ int	main (void){
 	std::cout << james << std::endl;
 	std::cout << jeremy << std::endl;
 	std::cout << std::endl;
-	Bureaucrat *jack = test();
+	Bureaucrat *jack = hireBureaucrat("Jack", 15);
 	if (jack != NULL)
 		std::cout << *jack << std::endl;
 	delete jack;

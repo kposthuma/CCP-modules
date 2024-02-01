@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/01/31 10:33:41 by koen          ########   odam.nl         */
+/*   Updated: 2024/02/01 11:41:40 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 class	Form::GradeTooHighException : public std::exception{
 	public:
 		const char	*what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW{
-			return "Grade too high.";
+			return "Form exception: Grade too high.";
 		}
 };
 
 class	Form::GradeTooLowException : public std::exception{
 	public:
 		const char	*what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW{
-			return "Grade too low.";
+			return "Form exception: Grade too low.";
 		}
 };
 
@@ -96,7 +96,7 @@ void	Form::beSigned(const Bureaucrat &bur){
 
 std::ostream	&operator<< (std::ostream &out, const Form& src){
 	out << src.getName() << ", Form sign grade " << src.getSignGrade()
-	<< "and execute grade" << src.getExecGrade() << ", has ";
+	<< " and execute grade " << src.getExecGrade() << ", has ";
 	if (!src.getSigned())
 		out << "not ";
 	out << "been signed";

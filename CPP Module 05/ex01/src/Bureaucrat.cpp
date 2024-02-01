@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/01/31 10:31:18 by koen          ########   odam.nl         */
+/*   Updated: 2024/02/01 11:44:10 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 class	Bureaucrat::GradeTooHighException : public std::exception{
 	public:
 		const char	*what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW{
-			return "Grade too high.";
+			return "Bureaucrat exception: Grade too high.";
 		}
 };
 
 class	Bureaucrat::GradeTooLowException : public std::exception{
 	public:
 		const char	*what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW{
-			return "Grade too low.";
+			return "Bureaucrat exception: Grade too low.";
 		}
 };
 
@@ -105,7 +105,7 @@ void	Bureaucrat::decrementGrade(){
 }
 
 void	Bureaucrat::signForm(const Form &form) const{
-	if (!form.getSignGrade())
+	if (!form.getSigned())
 		std::cout << _name << " couln't sign form " << form.getName() << " because their grade was too low." << std::endl;
 	else
 		std::cout << _name << " could sign form " << form.getName() << std::endl;
