@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:26:19 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 18:39:39 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/02/02 17:26:49 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <exception> 
 #include <typeinfo>
 #include <Bureaurat.hpp>
+
+const static std::string formType[3] = {"Shrubbery Creation Form", "Robotomy Request Form", "Presidential Pardon Form"};
 
 class Bureaucrat;
 
@@ -48,5 +50,6 @@ class AForm
 };
 
 std::ostream & operator<< (std::ostream &out, const AForm& src);
+std::ostream & operator<< (std::ostream &out, const AForm* src);
 
 #endif

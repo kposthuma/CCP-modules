@@ -6,18 +6,18 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/01 12:33:06 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 15:35:47 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/02/02 14:00:42 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <PresidentialPardonForm.hpp>
 
 PresidentialPardonForm::PresidentialPardonForm():
-	AForm("Presidential Pardon Form", 25, 5), _target("John Cena"){
+	AForm(formType[2], 25, 5), _target("John Cena"){
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target):
-	AForm("Presidential Pardon Form", 25, 5), _target(target){
+	AForm(formType[2], 25, 5), _target(target){
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src):

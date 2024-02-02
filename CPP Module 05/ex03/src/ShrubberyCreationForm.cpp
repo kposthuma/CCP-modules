@@ -13,11 +13,11 @@
 #include <ShrubberyCreationForm.hpp>
 
 ShrubberyCreationForm::ShrubberyCreationForm():
-	AForm("Shrubbery Creation Form", 145, 137), _target("the backyard"){
+	AForm(formType[0], 145, 137), _target("the backyard"){
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target):
-	AForm("Shrubbery Creation Form", 145, 137), _target(target){
+	AForm(formType[0], 145, 137), _target(target){
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src):

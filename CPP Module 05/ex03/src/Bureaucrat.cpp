@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 14:43:52 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/02/02 17:30:18 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,3 +123,7 @@ std::ostream & operator<< (std::ostream &out, const Bureaucrat& src){
 	return out;
 }
 
+std::ostream & operator<< (std::ostream &out, const Bureaucrat* src){
+	out << src->getName() << ", bureaucrat grade " << src->getGrade();
+	return out;
+}

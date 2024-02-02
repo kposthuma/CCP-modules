@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 18:39:54 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/02/02 17:27:32 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,3 +116,11 @@ std::ostream	&operator<< (std::ostream &out, const AForm& src){
 	return out;
 }
 
+std::ostream	&operator<< (std::ostream &out, const AForm* src){
+	out << src->getName() << ", Form sign grade " << src->getSignGrade()
+	<< " and execute grade " << src->getExecGrade() << ", has ";
+	if (!src->getSigned())
+		out << "not ";
+	out << "been signed";
+	return out;
+}

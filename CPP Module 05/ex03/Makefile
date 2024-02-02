@@ -6,7 +6,7 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2024/02/01 14:25:48 by kposthum      ########   odam.nl          #
+#    Updated: 2024/02/02 12:50:02 by kposthum      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRCS := main.cpp \
 		AForm.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp \
-		PresidentialPardonForm.cpp
+		PresidentialPardonForm.cpp \
+		Intern.cpp
 HEADERS	:= -I ./include
 SRCDIR := ./src
 OBJDIR := ./obj

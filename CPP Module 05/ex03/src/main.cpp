@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:37 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 17:12:39 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/02/02 17:31:32 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <ShrubberyCreationForm.hpp>
 #include <RobotomyRequestForm.hpp>
 #include <PresidentialPardonForm.hpp>
+#include <Intern.hpp>
 
 Bureaucrat	*hireBur(std::string name, int grade){
 	Bureaucrat *bur;
@@ -28,29 +29,15 @@ Bureaucrat	*hireBur(std::string name, int grade){
 }
 
 int	main (void){
-	
-	Bureaucrat	*jack = hireBur("Jack", 1);
-	Bureaucrat	*john = hireBur("John", 150);
-	AForm		*form1 = new ShrubberyCreationForm("home");
-	AForm		*form2 = new RobotomyRequestForm("Henk");
-	AForm		*form3 = new PresidentialPardonForm("Edward Snowden");
-	
-	form1->beSigned(*jack);
-	form2->beSigned(*john);
-	form2->beSigned(*jack);
-	form3->beSigned(*jack);
-	std::cout << std::endl;
-	std::cout << *form1 << std::endl;
-	std::cout << *form2 << std::endl;
-	std::cout << *form3 << std::endl;
-	form1->execute(*john);
-	form1->execute(*jack);
-	form2->execute(*jack);
-	form3->execute(*jack);
-	delete	jack;
-	delete	john;
-	delete	form1;
-	delete	form2;
-	delete	form3;
+
+	Intern someRandomIntern;
+	AForm* rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+
+	std::cout << rrf << std::endl;
+
+	Bureaucrat *elPresidente = hireBur("el Presidente", 1);
+	rrf->beSigned(*elPresidente);
+	rrf->execute(*elPresidente);
+	delete rrf;
 	return 0;
 }

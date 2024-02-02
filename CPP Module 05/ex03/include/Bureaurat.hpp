@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:26:19 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 14:32:13 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/02/02 17:29:47 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ class Bureaucrat
 };
 
 std::ostream & operator<< (std::ostream &out, const Bureaucrat& src);
+std::ostream & operator<< (std::ostream &out, const Bureaucrat* src);
 
 #endif

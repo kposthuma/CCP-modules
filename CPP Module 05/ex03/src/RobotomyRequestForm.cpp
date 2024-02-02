@@ -6,18 +6,18 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/01 12:32:46 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 17:11:50 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/02/02 14:01:14 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <RobotomyRequestForm.hpp>
 
 RobotomyRequestForm::RobotomyRequestForm():
-	AForm("Robotomy Request Form", 72, 45), _target("Your mother"){
+	AForm(formType[1], 72, 45), _target("Your mother"){
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target):
-	AForm("Robotomy Request Form", 72, 45), _target(target){
+	AForm(formType[1], 72, 45), _target(target){
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src):
