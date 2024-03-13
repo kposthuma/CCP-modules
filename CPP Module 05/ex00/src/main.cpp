@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:37 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 19:28:10 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/03/13 18:57:03 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,35 @@ Bureaucrat *hireBureaucrat(std::string name, int grade){
 		bur = new Bureaucrat(name, grade);
 	}
 	catch(std::exception const &e){
+		std::cout << e.what() << std::endl;
 		return NULL;
 	}
 	return bur;
 }
 
 int	main (void){
-	Bureaucrat john("John", 1);
-	std::cout << john << std::endl;
+	try{
+		Bureaucrat john("John", 1);
+		std::cout << john << std::endl;
+		john.incementGrade();
+		std::cout << john << std::endl;
+	}
+	catch(std::exception const &e){
+		std::cout << e.what() << std::endl;
+	}
 
 	Bureaucrat james("James", 150);
 	std::cout << james << std::endl;
 
 	Bureaucrat jeremy = james;
 
-	john.incementGrade();
 	james.decrementGrade();
 	jeremy.incementGrade();
 	
-	std::cout << john << std::endl;
 	std::cout << james << std::endl;
 	std::cout << jeremy << std::endl;
 	std::cout << std::endl;
-	Bureaucrat *jack = hireBureaucrat("Jack", 15);
+	Bureaucrat *jack = hireBureaucrat("Jack", 9999);
 	if (jack != NULL)
 		std::cout << *jack << std::endl;
 	delete jack;

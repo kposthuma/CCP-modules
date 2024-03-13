@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:37 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/02 17:31:32 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/03/13 19:03:18 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Bureaucrat	*hireBur(std::string name, int grade){
 		bur = new Bureaucrat(name, grade);
 	}
 	catch(std::exception const &e){
+		std::cout << e.what() << std::endl;
 		return NULL;
 	}
 	return bur;

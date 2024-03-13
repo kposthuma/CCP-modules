@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 11:41:40 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/03/13 18:59:23 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,30 +32,18 @@ Form::Form(): _name("Computer says no"), _signed(false), _signGrade(150), _execG
 Form::Form(std::string name) :_name(name), _signed(false), _signGrade(150), _execGrade(150){
 }
 
-Form::Form(std::string name, int signGrade, int execGrade) try: _name(name), _signed(false),
+Form::Form(std::string name, int signGrade, int execGrade) : _name(name), _signed(false),
 	_signGrade(signGrade < 1 ? throw GradeTooHighException() : signGrade
 		&& signGrade > 150 ? throw GradeTooLowException() : signGrade),
 	 _execGrade(execGrade < 1 ? throw GradeTooHighException() : execGrade
 		&& execGrade > 150 ? throw GradeTooLowException() : execGrade){
 }
-catch (std::exception const& e){
-	std::cout << e.what() << std::endl;
-}
-catch(...){
-	std::cout << "Unhandled exception" << std::endl;
-}
 
-Form::Form(const Form &src) try: _name(src.getName()), _signed(src.getSigned()),
+Form::Form(const Form &src) : _name(src.getName()), _signed(src.getSigned()),
 	_signGrade(src.getSignGrade() < 1 ? throw GradeTooHighException() : src.getSignGrade()
 		&& src.getSignGrade() > 150 ? throw GradeTooLowException() : src.getSignGrade()),
 	 _execGrade(src.getExecGrade() < 1 ? throw GradeTooHighException() : src.getExecGrade()
 		&& src.getExecGrade() > 150 ? throw GradeTooLowException() : src.getExecGrade()){
-}
-catch (std::exception const& e){
-	std::cout << e.what() << std::endl;
-}
-catch(...){
-	std::cout << "Unhandled exception" << std::endl;
 }
 
 Form::~Form(){

@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:37 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/02/01 11:45:23 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/03/13 19:00:13 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Bureaucrat	*hireBur(std::string name, int grade){
 		bur = new Bureaucrat(name, grade);
 	}
 	catch(std::exception const &e){
+		std::cout << e.what() << std::endl;
 		return NULL;
 	}
 	return bur;
@@ -30,6 +31,7 @@ Form	*makeForm(std::string name, int signGrade, int execGrade){
 		form = new Form(name, signGrade, execGrade);
 	}
 	catch(std::exception const &e){
+		std::cout << e.what() << std::endl;
 		return NULL;
 	}
 	return form;
