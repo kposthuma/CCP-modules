@@ -6,14 +6,17 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2024/03/28 17:51:40 by kposthum      ########   odam.nl          #
+#    Updated: 2024/04/01 13:19:04 by kposthum      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 CC := c++ -Wall -Werror -Wextra -std=c++98 -pedantic
-NAME := scalarconverter
+NAME := identifier
 SRCS := main.cpp \
-		ScalarConverter.hpp
+		Base.cpp \
+		A.cpp \
+		B.cpp \
+		C.cpp
 HEADERS	:= -I ./include
 SRCDIR := ./src
 OBJDIR := ./obj

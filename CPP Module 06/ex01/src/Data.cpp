@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Data.hpp                                           :+:    :+:            */
+/*   Data.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/03/28 18:06:38 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/04/01 13:12:30 by kposthum      ########   odam.nl         */
+/*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
+/*   Updated: 2024/04/01 13:13:53 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-# define DATA_HPP
+#include<Data.hpp>
 
-#include<string>
+Data::Data(): _content("content"){
+}
 
-class Data
-{
-	private:
-		std::string	_content;
-	public:
-		Data();
-		Data(std::string const &src);
-		Data(Data const &src);
-		~Data();
-		Data	operator=(Data const &src);
+Data::Data(std::string const &src): _content(src){
+}
 
-		std::string getContent();
-		void setContent(std::string const &src);
-};
+Data::Data(Data const &src): _content(src._content){
+}
 
-#endif
+Data::~Data(){
+}
+
+Data	Data::operator=(Data const &src){
+	this->_content = src._content;
+	return *this;
+}
+
+std::string Data::getContent(){
+	return _content;
+}
+
+void Data::setContent(std::string const &src){
+	_content = src;
+}

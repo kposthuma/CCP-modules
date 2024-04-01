@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:26:19 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/03/28 18:02:59 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/04/01 13:14:36 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class ScalarConverter
 {
 	private:
 		ScalarConverter();
-		~ScalarConverter();
+		// ~ScalarConverter();
 	public:
 		static void convert(std::string str);
 };

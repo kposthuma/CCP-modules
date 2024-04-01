@@ -1,17 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScalarConverter.cpp                                :+:    :+:            */
+/*   C.hpp                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/03/28 17:56:48 by kposthum      ########   odam.nl         */
+/*   Created: 2024/01/26 14:26:19 by kposthum      #+#    #+#                 */
+/*   Updated: 2024/04/01 13:21:08 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<ScalarConverter.hpp>
+#ifndef C_HPP
+# define C_HPP
 
-void	ScalarConverter::convert(std::string str){
-	
-}
+#include<string>
+#include<Base.hpp>
+
+class C: public Base
+{
+	private:
+
+	public:
+		C();
+		~C();
+};
+
+#endif
