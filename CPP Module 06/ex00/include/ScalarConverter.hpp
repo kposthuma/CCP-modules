@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:26:19 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/04/01 13:14:36 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/04/01 17:21:06 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,20 @@
 
 #include<string>
 
+enum types{
+	CHAR,
+	INT,
+	FLOAT,
+	DOUBLE
+};
+
 class ScalarConverter
 {
 	private:
 		ScalarConverter();
 		// ~ScalarConverter();
 	public:
-		static void convert(std::string str);
+		static void convert(std::string const &str);
 };
 
 #endif
