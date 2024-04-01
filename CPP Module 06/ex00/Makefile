@@ -6,11 +6,11 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2024/03/28 18:03:33 by kposthum      ########   odam.nl          #
+#    Updated: 2024/04/01 15:41:19 by kposthum      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-CC := c++ -Wall -Werror -Wextra -std=c++98 -pedantic
+CC := c++ -Wall -Werror -Wextra
 NAME := scalarconverter
 SRCS := main.cpp \
 		ScalarConverter.cpp
