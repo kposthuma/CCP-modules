@@ -6,14 +6,15 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2024/03/28 18:04:19 by kposthum      ########   odam.nl          #
+#    Updated: 2024/04/10 18:50:11 by kposthum      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-CC := c++ -Wall -Werror -Wextra -std=c++98 -pedantic
+CC := c++ -Wall -Werror -Wextra
 NAME := serializer
 SRCS := main.cpp \
-		Serializer.cpp
+		Serializer.cpp \
+		Data.cpp
 HEADERS	:= -I ./include
 SRCDIR := ./src
 OBJDIR := ./obj

@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:37 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/04/01 13:28:32 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/04/10 18:56:52 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ void identify(Base *p){}
 void identify(Base &p){}
 
 int	main (void){
-
+	Base *base = generate();
 	return 0;
 }
