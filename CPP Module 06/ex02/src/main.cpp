@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:37 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/04/12 17:00:10 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/04/12 17:03:22 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,17 @@ int	main (void){
 	Base *base3 = generate();
 	Base *base4 = generate();
 	Base *base5 = generate();
+	std::cout << std::endl;
 	identify(*base1);
 	identify(*base2);
 	identify(*base3);
 	identify(*base4);
 	identify(*base5);
+	std::cout << std::endl;
+	identify(base1);
+	identify(base2);
+	identify(base3);
+	identify(base4);
+	identify(base5);
 	return 0;
 }
