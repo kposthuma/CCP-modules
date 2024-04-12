@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/04/10 17:24:17 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/04/12 14:47:54 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ class	InvalidInput : public std::exception{
 
 int identify(std::string input){
 	if (input == "-inff" || input == "+inff" || input == "nanf")
-		return 0;
+		return FLOAT;
 	if (input == "-inf" || input == "+inf" || input == "nan")
-		return 0;
+		return DOUBLE;
 	if (input.length() == 1 && input.find_first_of("1234567890") == std::string::npos)
-		return 1;
+		return CHAR;
 	if (input.find_first_not_of("1234567890-.f") != std::string::npos)
 		throw InvalidInput();
 	if (input.find('-') != std::string::npos){
@@ -42,7 +42,7 @@ int identify(std::string input){
 		long l = std::stol(input);
 		if (l > INT_MAX || l < INT_MIN)
 			throw InvalidInput();
-		return 1;
+		return INT;
 	}
 	if (input.find('.') != input.rfind('.'))
 		throw InvalidInput();
@@ -51,20 +51,72 @@ int identify(std::string input){
 			throw InvalidInput();
 		if (input.find('.') == input.length() - 2)
 			throw InvalidInput();
-		return input.length() - input.find('.') - 2;
+		return FLOAT;
 	}
 	if (input.find('.') != input.length() - 1)
-		return input.length() - input.find('.') - 1;
+		return DOUBLE;
 	throw InvalidInput();
 }
 
-static void	display(std::string const &str, int i){
-	double a;
-	if (str.length() == 1 && std::isspace(str[0]))
-		a = str[0];
-	else
-		a = std::stod(str);
+static void	displayChar(std::string const &str){
+	char	a;
+	a = str[0];
+
 	std::cout.setf(std::ios::fixed, std::ios::floatfield);
+	std::cout.precision(1);
+	if (a >= 32 && a <= 126)
+		std::cout << "char:\t<" << a << ">" << std::endl;
+	else if ((a <= 32 && a >= 0) || a == 127)
+		std::cout << "char:\t<" << "non-displayable" << ">" << std::endl;
+	std::cout << "int:\t<" << (int)a << ">" << std::endl;
+	std::cout << "float:\t<" << (float)a << "f>" << std::endl;
+	std::cout << "double:\t<" << (double)a << ">" << std::endl;
+}
+
+static void	displayInt(std::string const &str){
+	int a;
+	a = std::stoi(str);
+
+	std::cout.setf(std::ios::fixed, std::ios::floatfield);
+	std::cout.precision(1);
+	if (a >= (int)32 && a <= (int)126)
+		std::cout << "char:\t<" << (char)a << ">" << std::endl;
+	else if ((a <= (int)32 && a >= (int)0) || a == (int)127)
+		std::cout << "char:\t<" << "non-displayable" << ">" << std::endl;
+	else
+		std::cout << "char:\t<" << "out of bounds" << ">" << std::endl;
+	std::cout << "int:\t<" << a << ">" << std::endl;
+	std::cout << "float:\t<" << (float)a << "f>" << std::endl;
+	std::cout << "double:\t<" << (double)a << ">" << std::endl;
+}
+
+static void	displayFloat(std::string const &str){
+	float a;
+	a = std::stof(str);
+
+	std::cout.setf(std::ios::fixed, std::ios::floatfield);
+	int i = str.length() - str.find('.') - 2;
+	std::cout.precision(i);
+	if (a >= (int)32 && a <= (int)126)
+		std::cout << "char:\t<" << (char)a << ">" << std::endl;
+	else if ((a <= (int)32 && a >= (int)0) || a == (int)127)
+		std::cout << "char:\t<" << "non-displayable" << ">" << std::endl;
+	else
+		std::cout << "char:\t<" << "out of bounds" << ">" << std::endl;
+	if (a >= (float)INT_MIN && a <= (float)INT_MAX)
+		std::cout << "int:\t<" << (int)a << ">" << std::endl;
+	else
+		std::cout << "int:\t<" << "out of bounds" << ">" << std::endl;
+	std::cout << "float:\t<" << a << "f>" << std::endl;
+	std::cout << "double:\t<" << (double)a << ">" << std::endl;
+}
+
+static void	displayDouble(std::string const &str){
+	double a;
+	a = std::stod(str);
+
+	std::cout.setf(std::ios::fixed, std::ios::floatfield);
+	int i = str.length() - str.find('.') - 1;
 	std::cout.precision(i);
 	if (a >= (int)32 && a <= (int)126)
 		std::cout << "char:\t<" << (char)a << ">" << std::endl;
@@ -77,11 +129,19 @@ static void	display(std::string const &str, int i){
 	else
 		std::cout << "int:\t<" << "out of bounds" << ">" << std::endl;
 	std::cout << "float:\t<" << (float)a << "f>" << std::endl;
-	std::cout << "double:\t<" << (double)a << ">" << std::endl;
+	std::cout << "double:\t<" << a << ">" << std::endl;
 }
-
 
 void	ScalarConverter::convert(std::string const &str){
 	int i = identify(str);
-	display(str, i);
+	if (i == CHAR)
+		displayChar(str);
+	else if (i == INT)
+		displayInt(str);
+	else if (i == FLOAT)
+		displayFloat(str);
+	else if (i == DOUBLE)
+		displayDouble(str);
+	else
+		throw InvalidInput();
 }
