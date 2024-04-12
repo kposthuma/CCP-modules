@@ -6,30 +6,22 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/08 16:14:15 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/12/09 14:06:13 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/04 13:42:35 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<ScavTrap.hpp>
 
-ScavTrap::ScavTrap(): ClapTrap(){
-	_hp = 100;
-	_ep = 50;
-	_ad = 20;
-	_hpMax = 100;
+ScavTrap::ScavTrap(): ClapTrap("No name", 100, 50, 20){
 	std::cout << "This is a ScavTrap" << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string name): ClapTrap(name){
-	_hp = 100;
-	_ep = 50;
-	_ad = 20;
-	_hpMax = 100;
+ScavTrap::ScavTrap(const std::string name): ClapTrap(name, 100, 50, 20){
 	std::cout << "This is a ScavTrap" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& src): ClapTrap(){
-	operator=(src);
+ScavTrap::ScavTrap(const ScavTrap& src): ClapTrap(src){
+	std::cout << "A copy of ScavTrap " << src.getName() << " has appeared" << std::endl;
 }
 
 ScavTrap::~ScavTrap(){
@@ -46,8 +38,14 @@ void ScavTrap::operator=(const ScavTrap& src){
 }
 
 void ScavTrap::attack(const std::string& target){
-	std::cout << "Attack as a ScavTrap: ";
-	ClapTrap::attack(target);
+	if (_ep > 0 && _hp > 0){
+		std::cout << "Attack as a ScavTrap: ";
+		ClapTrap::attack(target);
+	}
+	else if (_hp == 0)
+		std::cout << "ScavTrap " << _name << " has no health left!" << std::endl;
+	else if (_ep == 0)
+		std::cout << "ScavTrap " << _name << " has no energy left!" << std::endl;
 }
 
 void ScavTrap::guardGate(){

@@ -17,33 +17,33 @@
 #include<iomanip>
 #include<string>
 
-class ClapTrap
-{
+class ClapTrap {
 	protected:
-		std::string _name;
-		unsigned int _hp;
-		unsigned int _ep;
-		unsigned int _ad;
-		unsigned int _hpMax;
+		std::string		_name;
+		unsigned int	_hp;
+		unsigned int	_ep;
+		unsigned int	_ad;
+		unsigned int	_hpMax;
 	public:
 		ClapTrap();
 		ClapTrap(const std::string name);
+		ClapTrap(const std::string name, unsigned int hp, unsigned int ep, unsigned int ad);
 		ClapTrap(const ClapTrap& src);
 		~ClapTrap();
-		void operator=(const ClapTrap& src);
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		std::string getName() const;
-		unsigned int getHP() const;
-		unsigned int getEP() const;
-		unsigned int getAD() const;
-		unsigned int getHPMax() const;
-		void setName(const std::string name);
-		void setHP(const unsigned int hp);
-		void setEP(const unsigned int ep);
-		void setAD(const unsigned int ad);
-		void setHPMax(const unsigned int hp);
+		void			operator=(const ClapTrap& src);
+		void			attack(const std::string& target);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
+		std::string		getName() const;
+		unsigned int	getHP() const;
+		unsigned int	getEP() const;
+		unsigned int	getAD() const;
+		unsigned int	getHPMax() const;
+		void			setName(const std::string name);
+		void			setHP(const unsigned int hp);
+		void			setEP(const unsigned int ep);
+		void			setAD(const unsigned int ad);
+		void			setHPMax(const unsigned int hp);
 };
 
 #endif

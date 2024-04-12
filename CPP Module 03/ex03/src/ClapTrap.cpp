@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/07 17:27:56 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/30 18:37:46 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/04 13:44:55 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,13 @@ ClapTrap::ClapTrap(std::string name): _name(name), _hp(10), _ep(10), _ad(0), _hp
 	std::cout << "A ClapTrap called " << name << " appeared." << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& src){
-	operator=(src);
+ClapTrap::ClapTrap(const std::string name, unsigned int hp, unsigned int ep, unsigned int ad):
+_name(name), _hp(hp), _ep(ep), _ad(ad), _hpMax(hp){
+}
+
+ClapTrap::ClapTrap(const ClapTrap& src):
+_name(src.getName()), _hp(src.getHP()), _ep(src.getEP()), _ad(src.getAD()), _hpMax(src.getHPMax()){	
+	std::cout << "A copy of ClapTrap " << src.getName() << " has appeared." << std::endl;
 }
 
 ClapTrap::~ClapTrap(){

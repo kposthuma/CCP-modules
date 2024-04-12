@@ -6,11 +6,11 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2023/11/11 18:42:13 by koen          ########   odam.nl          #
+#    Updated: 2024/01/04 13:27:35 by kposthum      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-CC := c++ -std=c++98 -pedantic -Wall -Werror -Wextra
+CC := c++ -std=c++98 -pedantic -Wall -Werror -Wextra -g
 NAME := scavtrap
 SRCS := main.cpp \
 		ClapTrap.cpp \

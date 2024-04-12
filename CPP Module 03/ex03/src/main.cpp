@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 12:32:40 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/29 17:48:36 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/04 13:58:38 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,9 @@ int main(void)
 	you.attack("nobody in particular");
 	you.takeDamage(99);
 	you.beRepaired(200);
+	std::cout << std::endl;
+	DiamondTrap me(you);
+	me.whoAmI();
+	std::cout << "attck damage: " << you.getAD() << "\nmax hp: " << you.getHPMax() << "\nenergy: " << you.getEP() << std::endl;
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/07 17:27:56 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/30 18:30:57 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/04 13:16:32 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ ClapTrap::ClapTrap(std::string name): _name(name), _hp(10), _ep(10), _ad(0){
 	std::cout << "A ClapTrap called " << _name << " appeared." << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& src){
-	operator=(src);
+ClapTrap::ClapTrap(const ClapTrap& src): _name(src.getName()), _hp(src.getHP()), _ep(src.getEP()), _ad(src.getAD()){	
+	std::cout << "A copy of ClapTrap " << src.getName() << " has appeared." << std::endl;
 }
 
 void ClapTrap::operator=(const ClapTrap& src){
-	std::cout << "A copy of ClapTrap " << src.getName() << " has appeared" << std::endl;
+	std::cout << "ClapTrap " << src.getName() << " has been assigned to another." << std::endl;
 	_name = src.getName();
 	_hp = src.getHP();
 	_ep = src.getEP();
@@ -33,7 +33,7 @@ void ClapTrap::operator=(const ClapTrap& src){
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "ClapTrap died!" << std::endl;
+	std::cout << "ClapTrap " << _name << " died!" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target){

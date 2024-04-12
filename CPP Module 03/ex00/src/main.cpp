@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/25 12:32:40 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/11/08 16:04:16 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/04 13:15:52 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int main(void)
 		b.attack("the plebs");
 		b.attack("the plebs");
 		b.attack("the plebs");
+		ClapTrap c(b);
+		ClapTrap d = b;
 	}
 	return 0;
 }

@@ -6,30 +6,22 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 13:20:24 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/12/09 14:15:48 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/04 13:50:34 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<FragTrap.hpp>
 
-FragTrap::FragTrap(): ClapTrap(){
-	ClapTrap::_hp = 100;
-	ClapTrap::_ep = 100;
-	ClapTrap::_ad = 30;
-	ClapTrap::_hpMax = 100;
+FragTrap::FragTrap(): ClapTrap("No name", 100, 100, 30){
 	std::cout << "A FragTrap was born!" << std::endl;
 }
 
-FragTrap::FragTrap(const std::string name): ClapTrap(name){
-	ClapTrap::_hp = 100;
-	ClapTrap::_ep = 100;
-	ClapTrap::_ad = 30;
-	ClapTrap::_hpMax = 100;
+FragTrap::FragTrap(const std::string name): ClapTrap(name, 100, 100, 30){
 	std::cout << "A FragTrap was born!" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& src){
-	operator=(src);
+FragTrap::FragTrap(const FragTrap& src): ClapTrap(src){
+	std::cout << "A copy of FragTrap " << src.getName() << " has appeared" << std::endl;
 }
 
 FragTrap::~FragTrap(){
@@ -46,8 +38,14 @@ void FragTrap::operator=(const FragTrap& src){
 }
 
 void FragTrap::attack(std::string target){
-	std::cout << "Attack as a FragTrap: ";
-	ClapTrap::attack(target);
+	if (_ep > 0 && _hp > 0){
+		std::cout << "Attack as a FragTrap: ";
+		ClapTrap::attack(target);
+	}
+	else if (_hp == 0)
+		std::cout << "ScavTrap " << _name << " has no health left!" << std::endl;
+	else if (_ep == 0)
+		std::cout << "ScavTrap " << _name << " has no energy left!" << std::endl;
 }
 
 void FragTrap::highFivesGuys(void){

@@ -20,23 +20,23 @@
 class ClapTrap
 {
 	private:
-		std::string _name;
-		unsigned int _hp;
-		unsigned int _ep;
-		unsigned int _ad;
+		std::string		_name;
+		unsigned int	_hp;
+		unsigned int	_ep;
+		unsigned int	_ad;
 	public:
 		ClapTrap();
 		ClapTrap(const std::string _name);
 		ClapTrap(const ClapTrap& src);
-		void operator=(const ClapTrap& src);
 		~ClapTrap();
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		std::string getName() const;
-		unsigned int getHP() const;
-		unsigned int getEP() const;
-		unsigned int getAD() const;
+		void			operator=(const ClapTrap& src);
+		void			attack(const std::string& target);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
+		std::string		getName() const;
+		unsigned int	getHP() const;
+		unsigned int	getEP() const;
+		unsigned int	getAD() const;
 };
 
 #endif

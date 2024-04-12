@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 14:16:26 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/12/09 14:21:17 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/04 13:49:10 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 
 class DiamondTrap : public ScavTrap, public FragTrap {
 	private:
-		std::string _name;
+		std::string	_name;
 	public:
 		DiamondTrap();
 		DiamondTrap(std::string name);
 		DiamondTrap(const DiamondTrap &op);
 		~DiamondTrap();
-		void operator=(const DiamondTrap &op);
-		std::string getDiamondName() const;
-		using ScavTrap::attack;
-		void whoAmI();
+		void		operator=(const DiamondTrap &op);
+		std::string	getDiamondName() const;
+		void		whoAmI();
+		using		ScavTrap::attack;
 };
 
 #endif

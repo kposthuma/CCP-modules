@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/04/12 14:47:54 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/04/12 16:32:56 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int identify(std::string input){
 }
 
 static void	displayChar(std::string const &str){
+	std::cout << "input is a char" << std::endl;
 	char	a;
 	a = str[0];
 
@@ -68,67 +69,68 @@ static void	displayChar(std::string const &str){
 		std::cout << "char:\t<" << a << ">" << std::endl;
 	else if ((a <= 32 && a >= 0) || a == 127)
 		std::cout << "char:\t<" << "non-displayable" << ">" << std::endl;
-	std::cout << "int:\t<" << (int)a << ">" << std::endl;
-	std::cout << "float:\t<" << (float)a << "f>" << std::endl;
-	std::cout << "double:\t<" << (double)a << ">" << std::endl;
+	std::cout << "int:\t<" << static_cast<int>(a) << ">" << std::endl;
+	std::cout << "float:\t<" << static_cast<float>(a) << "f>" << std::endl;
+	std::cout << "double:\t<" << static_cast<double>(a) << ">" << std::endl;
 }
 
 static void	displayInt(std::string const &str){
+	std::cout << "input is an int" << std::endl;
 	int a;
 	a = std::stoi(str);
 
 	std::cout.setf(std::ios::fixed, std::ios::floatfield);
 	std::cout.precision(1);
-	if (a >= (int)32 && a <= (int)126)
-		std::cout << "char:\t<" << (char)a << ">" << std::endl;
-	else if ((a <= (int)32 && a >= (int)0) || a == (int)127)
+	if (static_cast<char>(a) >= 32 && static_cast<char>(a) <= 126)
+		std::cout << "char:\t<" << static_cast<char>(a) << ">" << std::endl;
+	else if ((static_cast<char>(a) <= 32 && static_cast<char>(a) >= 0) || static_cast<char>(a) == 127)
 		std::cout << "char:\t<" << "non-displayable" << ">" << std::endl;
 	else
 		std::cout << "char:\t<" << "out of bounds" << ">" << std::endl;
 	std::cout << "int:\t<" << a << ">" << std::endl;
-	std::cout << "float:\t<" << (float)a << "f>" << std::endl;
-	std::cout << "double:\t<" << (double)a << ">" << std::endl;
+	std::cout << "float:\t<" << static_cast<float>(a) << "f>" << std::endl;
+	std::cout << "double:\t<" << static_cast<double>(a) << ">" << std::endl;
 }
 
 static void	displayFloat(std::string const &str){
+	std::cout << "input is a float" << std::endl;
 	float a;
 	a = std::stof(str);
 
 	std::cout.setf(std::ios::fixed, std::ios::floatfield);
-	int i = str.length() - str.find('.') - 2;
-	std::cout.precision(i);
-	if (a >= (int)32 && a <= (int)126)
-		std::cout << "char:\t<" << (char)a << ">" << std::endl;
-	else if ((a <= (int)32 && a >= (int)0) || a == (int)127)
+	std::cout.precision(str.length() - str.find('.') - 2);
+	if (static_cast<char>(a) >= 32 && static_cast<char>(a) <= 126)
+		std::cout << "char:\t<" << static_cast<char>(a) << ">" << std::endl;
+	else if ((static_cast<char>(a) <= 32 && static_cast<char>(a) >= 0) || static_cast<char>(a) == 127)
 		std::cout << "char:\t<" << "non-displayable" << ">" << std::endl;
 	else
 		std::cout << "char:\t<" << "out of bounds" << ">" << std::endl;
 	if (a >= (float)INT_MIN && a <= (float)INT_MAX)
-		std::cout << "int:\t<" << (int)a << ">" << std::endl;
+		std::cout << "int:\t<" << static_cast<int>(a) << ">" << std::endl;
 	else
 		std::cout << "int:\t<" << "out of bounds" << ">" << std::endl;
 	std::cout << "float:\t<" << a << "f>" << std::endl;
-	std::cout << "double:\t<" << (double)a << ">" << std::endl;
+	std::cout << "double:\t<" << static_cast<double>(a) << ">" << std::endl;
 }
 
 static void	displayDouble(std::string const &str){
+	std::cout << "input is a double" << std::endl;
 	double a;
 	a = std::stod(str);
 
 	std::cout.setf(std::ios::fixed, std::ios::floatfield);
-	int i = str.length() - str.find('.') - 1;
-	std::cout.precision(i);
-	if (a >= (int)32 && a <= (int)126)
-		std::cout << "char:\t<" << (char)a << ">" << std::endl;
-	else if ((a <= (int)32 && a >= (int)0) || a == (int)127)
+	std::cout.precision(str.length() - str.find('.') - 1);
+	if (static_cast<char>(a) >= 32 && static_cast<char>(a) <= 126)
+		std::cout << "char:\t<" << static_cast<char>(a) << ">" << std::endl;
+	else if ((static_cast<char>(a) <= 32 && static_cast<char>(a) >= 0) || static_cast<char>(a) == 127)
 		std::cout << "char:\t<" << "non-displayable" << ">" << std::endl;
 	else
 		std::cout << "char:\t<" << "out of bounds" << ">" << std::endl;
 	if (a >= (double)INT_MIN && a <= (double)INT_MAX)
-		std::cout << "int:\t<" << (int)a << ">" << std::endl;
+		std::cout << "int:\t<" << static_cast<int>(a) << ">" << std::endl;
 	else
 		std::cout << "int:\t<" << "out of bounds" << ">" << std::endl;
-	std::cout << "float:\t<" << (float)a << "f>" << std::endl;
+	std::cout << "float:\t<" << static_cast<float>(a) << "f>" << std::endl;
 	std::cout << "double:\t<" << a << ">" << std::endl;
 }
 

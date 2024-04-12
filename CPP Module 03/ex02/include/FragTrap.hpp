@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 13:20:21 by kposthum      #+#    #+#                 */
-/*   Updated: 2023/12/09 14:06:32 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/01/04 13:47:26 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class FragTrap : public ClapTrap {
 		FragTrap(const std::string _name);
 		FragTrap(const FragTrap& srcy);
 		~FragTrap();
-		void operator=(const FragTrap& src);
-		void attack(const std::string& target);
-		void highFivesGuys(void);
+		void	operator=(const FragTrap& src);
+		void	attack(const std::string& target);
+		void	highFivesGuys(void);
 };
 
 #endif
