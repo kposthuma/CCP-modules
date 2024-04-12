@@ -6,17 +6,14 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2024/04/10 18:53:32 by kposthum      ########   odam.nl          #
+#    Updated: 2024/04/12 16:54:40 by kposthum      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 CC := c++ -Wall -Werror -Wextra
 NAME := identifier
 SRCS := main.cpp \
-		Base.cpp \
-		A.cpp \
-		B.cpp \
-		C.cpp
+		Base.cpp
 HEADERS	:= -I ./include
 SRCDIR := ./src
 OBJDIR := ./obj
