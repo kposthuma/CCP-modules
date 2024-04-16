@@ -6,12 +6,12 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2024/04/16 17:15:55 by kposthum      ########   odam.nl          #
+#    Updated: 2024/04/16 18:54:42 by kposthum      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 CC := c++ -Wall -Werror -Wextra
-NAME := iter
+NAME := array
 SRCS := main.cpp \
 		Array.cpp
 HEADERS	:= -I ./include
