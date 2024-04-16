@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   whatever.cpp                                       :+:    :+:            */
+/*   iter.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/01/26 14:25:59 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/04/16 14:45:03 by kposthum      ########   odam.nl         */
+/*   Created: 2024/01/26 14:26:19 by kposthum      #+#    #+#                 */
+/*   Updated: 2024/04/16 17:03:17 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<whatever.hpp>
+#pragma once
+#include<stddef.h>
+#include<iostream>
 
-template<typename T>
-void swap(T &var1, T &var2){
-	T temp;
-	temp = var1;
-	var1 = var2;
-	var2 = temp;
+template<typename Cont>
+void func(Cont &cont){
+	std::cout << "cont:\t" << cont << std::endl;
 }
 
-template<typename T>
-T min(T &var1, T &var2){
-	if (var1 < var2)
-		return var1;
-	else
-		return var2;
-}
-
-template<typename T>
-T max(T &var1, T &var2){
-	if (var1 > var2)
-		return var1;
-	else
-		return var2;
+template<typename Arr, typename Cont, typename Func>
+void iter(Arr *arr, size_t len, Func (*func)(Cont)){
+	for (size_t i = 0; i < len; i++){
+		func(arr[i]);
+	}
 }
