@@ -6,13 +6,14 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2024/04/23 17:18:14 by kposthum      ########   odam.nl          #
+#    Updated: 2024/04/23 17:34:05 by kposthum      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 CC := c++ -Wall -Werror -Wextra
-NAME := abomination
-SRCS := main.cpp
+NAME := RPN
+SRCS := main.cpp \
+		RPN.cpp
 HEADERS	:= -I ./include
 SRCDIR := ./src
 OBJDIR := ./obj
