@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:37 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/04/23 15:25:54 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/04/23 17:12:50 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include<list>
 
 void sametestbutwithlist(){
-	std::cout << "Same test but with list, should have same output" << std::endl;
 	std::list<int> lst;
 	lst.push_back(5);
 	lst.push_back(17);
@@ -33,14 +32,16 @@ void sametestbutwithlist(){
 	++it;
 	--it;
 	while (it != ite){
-		std::cout << *it << ",\t";
+		std::cout << "<" << *it << ">,\t";
 		++it;
 	}
 	std::cout << std::endl;
 }
 
+#include <cassert>
 int main(){
-	MutantStack<int> mstack;
+	// tests provided by the subject
+	{MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
 	std::cout << mstack.top() << std::endl;
@@ -55,11 +56,56 @@ int main(){
 	++it;
 	--it;
 	while (it != ite){
-		std::cout << *it << ",\t";
+		std::cout << "<" << *it << ">,\t";
 		++it;
 	}
 	std::cout << std::endl << std::endl;
+	// Same test but with list, should have same output
 	sametestbutwithlist();
+	//testing with a stack, should behave the same as my mutated abomination
 	std::stack<int> s(mstack);
+	try{
+		assert(mstack.top() == s.top());
+	}
+	catch(std::exception const &e){
+		std::cout << e.what() << std::endl;
+	}
+	mstack.pop();
+	mstack.pop();
+	s.pop();
+	s.pop();
+	try{
+		assert(mstack.top() == s.top());
+	}
+	catch(std::exception const &e){
+		std::cout << e.what() << std::endl;
+	}
+	try{
+		assert(mstack.size() == s.size());
+	}
+	catch(std::exception const &e){
+		std::cout << e.what() << std::endl;
+	}}
+	std::cout << std::endl;
+	// test with other variable type
+	{MutantStack<std::string> strstack;
+	strstack.push("Hello ");
+	strstack.push(", ");
+	std::cout << strstack.top() << std::endl;
+	strstack.pop();
+	strstack.push("World! ");
+	strstack.push("How ");
+	strstack.push("Are ");
+	std::cout << strstack.size() << std::endl;
+	strstack.push("You?");
+	MutantStack<std::string>::iterator it = strstack.begin();
+	MutantStack<std::string>::iterator ite = strstack.end();
+	++it;
+	--it;
+	while (it != ite){
+		std::cout << "<" << *it << ">,\t";
+		++it;
+	}}
+	std::cout << std::endl;
 	return 0;
 }
