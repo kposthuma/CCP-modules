@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/25 15:19:43 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/04/25 18:31:13 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/04/30 13:51:43 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int main(int argc, char **argv){
 		}
 		std::map<long, float>::iterator it = datamap.upper_bound(test);
 		it--;
-		std::cout << date << "\t" << val << "\ttotal worth:\t" << it->second * val << "\t@" << it->first << std::endl;
+		std::cout << date << "\t" << val << "\ttotal value:\t" << it->second * val << "\t@" << it->first << std::endl;
 		i++;
 	}
 	buff.clear(), date.clear(), rate.clear();
