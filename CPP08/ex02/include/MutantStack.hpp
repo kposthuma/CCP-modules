@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:26:19 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/04/23 15:16:47 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/05/02 14:41:23 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ template<class T, class Container = std::deque<T>>
 class MutantStack : public std::stack<T>{
 	private:
 	public:
-		typedef typename std::deque<T>::iterator iterator;
+		typedef typename Container::iterator iterator;
 		iterator begin(){
 			return std::stack<T>::c.begin();
 		}

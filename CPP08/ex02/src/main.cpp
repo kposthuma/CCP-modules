@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 14:25:37 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/04/23 17:12:50 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/05/02 14:41:32 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void sametestbutwithlist(){
 	std::list<int> lst;
 	lst.push_back(5);
 	lst.push_back(17);
-	std::cout << lst.front() << std::endl;
+	std::cout << lst.back() << std::endl;
 	lst.pop_back();
 	std::cout << lst.size() << std::endl;
 	lst.push_back(3);

@@ -1,0 +1,32 @@
+comparing pairs: 4 3
+comparing pairs: 2 9
+comparing pairs: 0 1
+comparing pairs: 7 5
+3 4 2 9 0 1 5 7 
+comparing pairs: 4 9
+comparing pairs: 1 7
+3 4 2 9 0 1 5 7 
+comparing pairs: 9 7
+0 1 5 7 3 4 2 9 
+0 1 5 7 3 4 2 9 
+current layer: 3
+current layer: 2
+searching for insertion: 9 compare to: 4
+searching for insertion: 4 compare to: 7
+create subcontainer of size 2
+	sinsert it in the right place
+searching for insertion: 7 compare to: 1
+searching for insertion: 1 compare to: 0
+current layer: 1
+searching for insertion: 9 compare to: 2
+searching for insertion: 2 compare to: 4
+create subcontainer of size 1
+	sinsert it in the right place
+searching for insertion: 4 compare to: 3
+searching for insertion: 3 compare to: 7
+create subcontainer of size 1
+	sinsert it in the right place
+searching for insertion: 7 compare to: 5
+searching for insertion: 5 compare to: 1
+searching for insertion: 1 compare to: 0
+current layer: 0
