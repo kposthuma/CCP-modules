@@ -6,11 +6,11 @@
 #    By: kposthum <kposthum@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/06 16:04:34 by kposthum      #+#    #+#                  #
-#    Updated: 2024/05/09 14:31:42 by kposthum      ########   odam.nl          #
+#    Updated: 2024/05/14 14:10:43 by kposthum      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-CC := c++ -Wall -Werror -Wextra -g3
+CC := c++ -Wall -Werror -Wextra -g3 #-fsanitize=address
 NAME := PmergeMe
 SRCS := main.cpp \
 		FordJohnsonL.cpp \
