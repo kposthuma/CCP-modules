@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/09 14:25:52 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/05/15 13:29:52 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/05/15 17:25:04 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,6 @@ static void insertion(std::vector<int> &vect, size_t layer)
 				it--;
 			}
 			mirrorVector(temp);
-	std::cout << "temp vector:\t";
-	std::for_each(temp.begin(), temp.end(), [](const int n){std::cout << n << ' '; });
-	std::cout << "\n\n";
-
 			// erase the values from original vector
 			std::vector<int>::iterator low = IteratorComparator(ptr, vect, (-1 * stepsize) + 1);
 			std::vector<int>::iterator high = IteratorComparator(ptr, vect, 1);
@@ -102,8 +98,5 @@ void FordJohnsonV(std::vector<int> &vect, size_t layer){
 	// recursion
 	if (vect.size() / pow(2, layer + 1) >= 1 && !std::is_sorted(vect.begin(), vect.end()))
 		FordJohnsonV(vect, layer + 1);
-	// std::cout << "vector after pairing:\t";
-	// std::for_each(vect.begin(), vect.end(), [](const int n){std::cout << n << ' '; });
-	// std::cout << "\n\n";
 	insertion(vect, layer);
 }

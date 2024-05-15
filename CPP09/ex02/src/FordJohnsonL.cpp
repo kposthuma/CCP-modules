@@ -6,7 +6,7 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/09 14:25:52 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/05/15 13:29:56 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/05/15 17:25:05 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,6 @@ static void insertion(std::list<int> &list, size_t layer)
 				it--;
 			}
 			mirrorList(temp);
-	std::cout << "temp list:\t";
-	std::for_each(temp.begin(), temp.end(), [](const int n){std::cout << n << ' '; });
-	std::cout << "\n\n";
-
 			// erase the values from original list
 			std::list<int>::iterator low = IteratorComparator(ptr, list, (-1 * stepsize) + 1);
 			std::list<int>::iterator high = IteratorComparator(ptr, list, 1);
@@ -112,8 +108,5 @@ void FordJohnsonL(std::list<int> &list, size_t layer){
 	// recursion
 	if (list.size() / pow(2, layer + 1) >= 1 && !std::is_sorted(list.begin(), list.end()))
 		FordJohnsonL(list, layer + 1);
-	// std::cout << "list after pairing:\t";
-	// std::for_each(list.begin(), list.end(), [](const int n){std::cout << n << ' '; });
-	// std::cout << '\n\n';
 	insertion(list, layer);
 }

@@ -6,11 +6,12 @@
 /*   By: kposthum <kposthum@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/30 16:50:39 by kposthum      #+#    #+#                 */
-/*   Updated: 2024/05/14 16:25:47 by kposthum      ########   odam.nl         */
+/*   Updated: 2024/05/15 17:40:22 by kposthum      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<PmergeMe.hpp>
+#include<chrono>
 
 template<typename T>
 void insertRange(T &cont, char **arg){
@@ -39,19 +40,27 @@ int main(int argc, char **argv){
 		std::cout << argv[i] << ' ';
 	}
 	std::cout << std::endl;
-	
+	static std::chrono::_V2::system_clock::time_point start;
+	static std::chrono::_V2::system_clock::time_point end;
+
 	std::vector<int> vect;
+	start = std::chrono::high_resolution_clock::now();
 	insertRange(vect, argv + 1);
 	FordJohnsonV(vect, 0);
+	end = std::chrono::high_resolution_clock::now();
 	std::cout << "sorted vector:\t";
 	std::for_each(vect.begin(), vect.end(), [](const int n){std::cout << n << ' '; });
 	std::cout << '\n';
+	std::cout << "time taken:\t" << std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() << " μs" << std::endl << std::endl;
 
 	std::list<int> list;
+	start = std::chrono::high_resolution_clock::now();
 	insertRange(list, argv + 1);
 	FordJohnsonL(list, 0);
+	end = std::chrono::high_resolution_clock::now();
 	std::cout << "sorted list:\t";
 	std::for_each(list.begin(), list.end(), [](const int n){std::cout << n << ' '; });
 	std::cout << '\n';
+	std::cout << "time taken:\t" << std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() << " μs" << std::endl << std::endl;
 	return 0;
 }
